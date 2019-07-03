@@ -10,5 +10,5 @@
 
 <div>
 <h4>保存到数据库的数据-----------------</h4>
-<img src="https://github.com/yueyue10/PythonPro/raw/master/doc/pic_sql.png" width="33%"  />
+<img src="https://github.com/yueyue10/PythonPro/raw/master/doc/pic_sql.png" width="100%"  />
 </div>
