@@ -31,6 +31,15 @@ class GithubDataSpider(object):
         com_html = etree.HTML(html)
         link_els = com_html.xpath(
             '//div[@id="user-repositories-list"]//li[@class="col-12 d-flex width-full py-4 border-bottom public fork"]')
+        link_els1 = com_html.xpath(
+            '//div[@id="user-repositories-list"]//li[@class="col-12 d-flex width-full py-4 border-bottom public source"]')
+        self.save_data(link_els)
+        self.save_data(link_els1)
+
+        TimeUtils.sleep_long()
+        Log.info("github_ data spider successfully!")
+
+    def save_data(self, link_els):
         for li in link_els:
             url_el_ = li.xpath("./div[1]/div[1]/h3/a/@href")
             data_url = "https://github.com" + "".join(url_el_)
@@ -55,8 +64,6 @@ class GithubDataSpider(object):
                 Log.info('githubSpider mysql failed.')
                 Log.info(info_val)
                 continue
-        TimeUtils.sleep_long()
-        Log.info("github_ data spider successfully!")
 
     def get_list_page(self, url):
         global content
