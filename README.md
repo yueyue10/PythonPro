@@ -12,6 +12,7 @@
       (具体操作就是使用navicat工具运行脚本文件即可)。
 
 > 4. 安装第三方插件依赖(可以选择配置python虚拟环境防止不同项目第三方插件版本冲突，[查看文档][1])
+
     ```pip install -r requirements.txt```
 
 > 5. 使用Intellij IDEA运行项目中的\spider\GithubSpider.py程序，
