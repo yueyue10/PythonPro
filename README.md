@@ -1,6 +1,9 @@
 # PythonPro
+项目介绍
 
 ## Python项目：爬取github的数据
+此项目可以爬取github的数据
+
 ### 项目运行步骤：
 
 > 1. 安装Python应用并将其配置到环境变量中
