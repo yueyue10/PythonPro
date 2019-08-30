@@ -16,7 +16,7 @@ class MySqlConfig:
     DB_HOST = '127.0.0.1'
     DB_PORT = 3306
     DB_USER = 'root'
-    DB_PWD = 'zhaoyj'
+    DB_PWD = '123456'
     DB_NAME = 'spider_2019'
     DB_CHAR = 'utf8mb4'
 
