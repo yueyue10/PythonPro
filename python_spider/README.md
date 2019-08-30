@@ -26,8 +26,8 @@
 
 <div>
 <h4 align="center">数据库配置</h4>
-<img src="https://github.com/yueyue10/PythonPro/raw/master/doc/pic_sql_design.png" width="45%"  />
-<img src="https://github.com/yueyue10/PythonPro/raw/master/doc/DbConfig.png" width="45%"  />
+<img src="https://github.com/yueyue10/PythonPro/raw/master/python_spider/doc/pic_sql_design.png" width="45%"  />
+<img src="https://github.com/yueyue10/PythonPro/raw/master/python_spider/doc/DbConfig.png" width="45%"  />
 <h5 align="center">查看保存到数据库的数据</h5>
-<img align="center" src="https://github.com/yueyue10/PythonPro/raw/master/doc/pic_sql.png" width="50%"  />
+<img align="center" src="https://github.com/yueyue10/PythonPro/raw/master/python_spider/doc/pic_sql.png" width="50%"  />
 </div>

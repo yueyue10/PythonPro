@@ -7,5 +7,9 @@
 | Project                    |       Project介绍(点击查看详情)    |
 | --------                   |          :----:                      |
 | python_spider              |          [python爬取github数据][1]                    |
+| python_demo                |          [python基础学习][2]                    |
+| appium_demo                |          [appium测试框架][3]                    |
 
 [1]:https://github.com/yueyue10/PythonPro/tree/master/python_spider
+[2]:https://github.com/yueyue10/PythonPro/tree/master/python_demo
+[3]:https://github.com/yueyue10/PythonPro/tree/master/appium_demo
