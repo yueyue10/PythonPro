@@ -1,4 +1,4 @@
-from appium_demo.base.activity import Activity
+from base.activity import Activity
 
 
 class NewsDetailActivity(Activity):

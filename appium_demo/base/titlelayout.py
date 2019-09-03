@@ -1,4 +1,4 @@
-from appium_demo.base.appelement import AppElement
+from base.appelement import AppElement
 
 
 class TitleLayout(AppElement):

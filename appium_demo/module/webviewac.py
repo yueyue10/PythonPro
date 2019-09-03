@@ -1,5 +1,5 @@
-from appium_demo.base.activity import Activity
-from appium_demo.base.titlelayout import TitleLayout
+from base.activity import Activity
+from base.titlelayout import TitleLayout
 
 
 class WebViewActivity(Activity):

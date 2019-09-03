@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 
-from appium_demo.base.activity import Activity
-from appium_demo.module.pictureselectorac import PictureSelectorActivity
+from base.activity import Activity
+from module.pictureselectorac import PictureSelectorActivity
 
 
 class FeedbackActivity(Activity):

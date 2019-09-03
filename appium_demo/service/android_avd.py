@@ -3,8 +3,8 @@ import time
 from multiprocessing import Process
 from threading import Thread
 
-from appium_demo.utils import cmd_utils
-from appium_demo.utils.cmd_utils import CmdCode
+from utils import cmd_utils
+from utils.cmd_utils import CmdCode
 
 
 class AndroidAvd:

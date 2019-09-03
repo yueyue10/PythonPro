@@ -1,5 +1,5 @@
-from appium_demo import AppConfig
-from appium_demo.base.activity import Activity
+from base.activity import Activity
+from service import AppConfig
 
 
 class LoginActivity(Activity):

@@ -1,6 +1,6 @@
 import json
 
-from appium_demo.other import json_data
+from other import json_data
 
 
 def json_test():

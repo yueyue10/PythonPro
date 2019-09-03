@@ -1,12 +1,12 @@
 from selenium.webdriver.common.by import By
 
-from appium_demo.base.appelement import AppElement
-from appium_demo.module import activity_list
-from appium_demo.module.feedbackac import FeedbackActivity
-from appium_demo.module.loginac import LoginActivity
-from appium_demo.module.newslistac import NewsListActivity
-from appium_demo.module.venuelistac import VenueListActivity
-from appium_demo.module.webviewac import WebViewActivity
+from base.appelement import AppElement
+from module import activity_list
+from module.feedbackac import FeedbackActivity
+from module.loginac import LoginActivity
+from module.newslistac import NewsListActivity
+from module.venuelistac import VenueListActivity
+from module.webviewac import WebViewActivity
 
 
 class MainActivity(AppElement):

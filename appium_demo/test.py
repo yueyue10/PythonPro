@@ -1,6 +1,6 @@
-from appium_demo.base.appelement import AppElement
-from appium_demo.module.mainac import MainActivity
-from appium_demo.service import multi_appium, android_avd
+from base.appelement import AppElement
+from module.mainac import MainActivity
+from service import multi_appium, android_avd
 
 
 class App(AppElement):

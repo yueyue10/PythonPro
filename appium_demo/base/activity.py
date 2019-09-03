@@ -1,6 +1,6 @@
-from appium_demo.base.appelement import AppElement
-from appium_demo.base.titlelayout import TitleLayout
-from appium_demo.module import activity_list
+from base.appelement import AppElement
+from base.titlelayout import TitleLayout
+from module import activity_list
 
 
 class Activity(AppElement):

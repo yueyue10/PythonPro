@@ -1,6 +1,6 @@
-from appium_demo.base.activity import Activity
-from appium_demo.module.loginac import LoginActivity
-from appium_demo.module.newsdetailac import NewsDetailActivity
+from base.activity import Activity
+from module.loginac import LoginActivity
+from module.newsdetailac import NewsDetailActivity
 
 
 class NewsListActivity(Activity):

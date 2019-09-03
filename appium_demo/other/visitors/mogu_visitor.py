@@ -6,9 +6,9 @@ import requests
 # 请求头
 from lxml import etree
 
-from appium_demo.log import save_log
-from appium_demo.other import json_data
-from appium_demo.other.visitors.cookie.selenium_test import SeleniumClient
+from log import save_log
+from other import json_data
+from other.visitors.cookie.selenium_test import SeleniumClient
 
 user_agent_list = [
     'Mozilla/5.0(compatible;MSIE9.0;WindowsNT6.1;Trident/5.0)',

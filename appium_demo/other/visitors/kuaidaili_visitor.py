@@ -5,9 +5,9 @@ import time
 import requests
 from lxml import etree
 
-from appium_demo.log import save_log
-from appium_demo.other import json_data
-from appium_demo.other.visitors.visitors_in_thread_html import target_headers, headers
+from log import save_log
+from other import json_data
+from other.visitors.visitors_in_thread_html import target_headers, headers
 
 
 class KuiDaiLi:

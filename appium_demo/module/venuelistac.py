@@ -1,5 +1,5 @@
-from appium_demo.base.activity import Activity
-from appium_demo.module.venuedetailac import VenueDetailActivity
+from base.activity import Activity
+from module.venuedetailac import VenueDetailActivity
 
 
 class VenueListActivity(Activity):

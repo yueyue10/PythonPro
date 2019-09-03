@@ -5,10 +5,10 @@ from multiprocessing import Process
 
 from appium import webdriver
 
-from appium_demo import AppConfig, desired_caps
-from appium_demo.base.appelement import AppElement
-from appium_demo.utils import cmd_utils
-from appium_demo.utils.cmd_utils import CmdCode
+from base.appelement import AppElement
+from service import AppConfig, desired_caps
+from utils import cmd_utils
+from utils.cmd_utils import CmdCode
 
 
 class AppiumService:

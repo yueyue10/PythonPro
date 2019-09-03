@@ -7,7 +7,7 @@ import sys
 from lxml import etree
 
 # 提供日志功能
-from appium_demo.log import LogConfig
+from log import LogConfig
 
 
 class MyLog:

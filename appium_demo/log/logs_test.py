@@ -2,8 +2,8 @@ import logging
 import os
 from logging import handlers
 
-from appium_demo.log import LogConfig, save_log
-from appium_demo.log.logger import MyLog
+from log import LogConfig, save_log
+from log.logger import MyLog
 
 
 class TestLogger(object):

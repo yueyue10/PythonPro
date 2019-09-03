@@ -1,9 +1,9 @@
 from apscheduler.schedulers.blocking import BlockingScheduler
 from apscheduler.triggers.cron import CronTrigger
 
-from appium_demo.log import save_log, init_log
-from appium_demo.other.visitors.kuaidaili_visitor import KuiDaiLi
-from appium_demo.utils.time_util import now_datetime
+from log import save_log, init_log
+from other.visitors.kuaidaili_visitor import KuiDaiLi
+from utils.time_util import now_datetime
 
 scheduler = BlockingScheduler()
 
