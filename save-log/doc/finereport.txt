@@ -1,0 +1,21 @@
+参考：https://help.finereport.com/doc-view-1706.html
+
+DATEDIF(F2,G2,unit)
+DATESUBDATE(F2, G2, "d") + "天" + mod(DATESUBDATE(F2, G2, "h"), 24) + "小时"
+mod(DATESUBDATE(F2, G2, "m"), 60) + "分钟" + mod(DATESUBDATE(F2, G2, "s"), 60) + "秒"
+
+>>>>>>>>>>>计算时间差：
+
+C6 单元格输入小时差：TRUNC((DATETONUMBER(G2) - DATETONUMBER(F2)) / 1000 / 60 / 60) + "小时"
+
+D6 单元格输入分钟差：TRUNC((DATETONUMBER(G2) - DATETONUMBER(F2)) / 1000 / 60) - TRUNC((DATETONUMBER(G2) - DATETONUMBER(F2)) / 1000 / 60 / 60) * 60 + "分"
+
+E6 单元格输入秒数差：if(right(G2, 2) - right(F2, 2) > 0, right(G2, 2) - right(F2, 2), right(G2, 2) - right(F2, 2) + 60) + "秒"
+
+>>>>>>>>>>>计算时间差：
+
+TRUNC((DATETONUMBER(G2) - DATETONUMBER(F2)) / 1000 / 60 / 60) + "小时"
+
++TRUNC((DATETONUMBER(G2) - DATETONUMBER(F2)) / 1000 / 60) - TRUNC((DATETONUMBER(G2) - DATETONUMBER(F2)) / 1000 / 60 / 60) * 60 + "分"
+
++if(right(G2, 2) - right(F2, 2) > 0, right(G2, 2) - right(F2, 2), right(G2, 2) - right(F2, 2) + 60) + "秒"

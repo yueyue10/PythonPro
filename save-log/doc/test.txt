@@ -1,0 +1,21 @@
+字段名称	Step name   	字段描述
+ID_BATCH      批处理ID       		The batch ID. It's a unique number, increased by one for each run of a transformation.
+CHANNEL_ID    日志通道ID  		The logging channel ID (GUID), can be matched to the logging lineage information
+TRANSNAME     转换的名称      		The name of the transformation
+STATUS	      转换的状态:开始、结束、停止     	    The status of the transformation : start, end, stopped
+LINES_READ      按指定步骤读取的行数。    		The number of lines read by the specified step.
+LINES_WRITTEN    指定步骤所写的行数。       	The number of lines written by the specified step.
+LINES_UPDATED    指定步骤执行的update语句的数量。       	The number of update statements executed by the specified step.
+LINES_INPUT	                 The number of lines read from disk or the network by the specified step. This is input from files, databases, etc.
+LINES_OUTPUT            	The number of lines written to disk or the network by the specified step. This is input to files, databases, etc.
+LINES_REJECTED    指定步骤通过错误处理拒绝的行数。      	The number of lines rejected with error handling by the specified step.
+ERRORS	        发生错误的数量             he number of errors that occurred.
+STARTDATE               	The start of the date range for incremental (CDC) data processing. It's the 'end of date range' of the last time this transformation ran correctly.
+ENDDATE	         增量(CDC)数据处理的日期范围的末尾            he end of the date range for incremental (CDC) data processing.
+LOGDATE	           此日志记录的更新时间         he update time of this log record.  If the transformation has status 'end' it's the end of the transformation.
+DEPDATE	           依赖项日期:由转换设置中的依赖项规则计算的最大日期。         he dependency date : the maximum date calculated by the dependency rules in the transformation settings.
+REPLAYDATE        重播日期      	The replay date is synonym for the start time of the transformation.
+LOG_FIELD         将包含运行的完整文本日志的字段      	The field that will contain the complete text log of the run.  Usually this is a CLOB or (long) TEXT type of field.
+EXECUTING_SERVER        		The server that executed this transformation
+EXECUTING_USER	        	The user that executed this transformation. This is the repository user if available or the OS user otherwise.
+CLIENT		                The Client which executed the transformation: Spoon, pan, kitchen, carte.
