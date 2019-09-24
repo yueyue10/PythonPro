@@ -15,3 +15,5 @@
 [2]:https://github.com/yueyue10/PythonPro/tree/master/python_demo
 [3]:https://github.com/yueyue10/PythonPro/tree/master/appium_demo
 [4]:https://github.com/yueyue10/PythonPro/tree/master/save-log
+
+[![Stargazers over time](https://starchart.cc/yueyue10/PythonPro.svg)](https://starchart.cc/yueyue10/PythonPro)     
