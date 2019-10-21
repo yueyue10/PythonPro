@@ -1,0 +1,32 @@
+{
+  "code": 0,
+  "success": "true",
+  "msg": "从mogu爬取的代理ip数据,",
+  "data": [
+    {
+      "IP": "220.186.188.214",
+      "Port": "43881",
+      "Protocol": "https"
+    },
+    {
+      "IP": "60.168.87.71",
+      "Port": "30270",
+      "Protocol": "https"
+    },
+    {
+      "IP": "112.194.88.28",
+      "Port": "21431",
+      "Protocol": "https"
+    },
+    {
+      "IP": "121.230.209.181",
+      "Port": "33606",
+      "Protocol": "https"
+    },
+    {
+      "IP": "36.57.87.70",
+      "Port": "40862",
+      "Protocol": "https"
+    }
+  ]
+}

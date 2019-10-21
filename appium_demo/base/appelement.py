@@ -3,7 +3,7 @@ import time
 from appium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 
-from appium_demo import AppConfig
+from service import AppConfig
 
 
 class AppElement:

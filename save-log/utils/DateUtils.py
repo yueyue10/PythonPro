@@ -40,21 +40,19 @@ def test3(time1='2017-10-16 19:21:22', time2='2017-10-17 20:22:22'):
 
 def test4():
     # 日期转成时间戳
-    time1 = time.strptime('2017-10-16 20:21:22', "%Y-%m-%d %H:%M:%S")
-    time2 = time.strptime('2017-10-17 21:21:22', "%Y-%m-%d %H:%M:%S")
+    # 计算时间戳差值
+    time1 = time.strptime('2019-09-11 08:00:37', "%Y-%m-%d %H:%M:%S")
+    time2 = time.strptime('2019-09-11 08:49:10', "%Y-%m-%d %H:%M:%S")
     timeStamp1 = int(time.mktime(time1))
     timeStamp2 = int(time.mktime(time2))
     print(timeStamp1)
     print(timeStamp2)
     print(timeStamp2 - timeStamp1)
-    # 时间戳转成日期
-    timeStamp = timeStamp2 - timeStamp1
-    print(timeStamp)
 
 
 if __name__ == '__main__':
     # test()
     # test1()
     # test2()
-    test3('2019-09-09 00:19:46', '2019-09-10 00:20:11')
-    # test4()
+    # test3('2019-09-09 00:19:46', '2019-09-10 00:20:11')
+    test4()

@@ -81,7 +81,7 @@ class AndroidAvd:
 
 
 def start_avd(start_style='process'):
-    avd_name = 'Nexus_6P_API_26'
+    avd_name = 'Nexus_5_API_24'
     device_name = 'emulator-5554'
     emulator_path = r'E:\Users\Android\sdk\tools\emulator.exe'
     avd = AndroidAvd(emulator_path, avd_name, device_name)
