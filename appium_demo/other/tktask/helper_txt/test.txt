@@ -1,0 +1,60 @@
+def get_video_detail_by_id(video_id):
+url = “https://aweme-hl.snssdk.com/aweme/v1/aweme/detail/?version_code=6.5.0&pass-region=1&pass-route=1&js_sdk_version=1.16.2.7&app_name=aweme&vid=9D5F078E-A1A9-4F64-81C7-F89CA6A3B1DC&app_version=6.5.0&device_id=34712926793&channel=App Store&mcc_mnc=46011&aid=1128&screen_width=750&openudid=263bd93f02801d126ca004edccbff8f6e1b19f51&os_api=18∾=WIFI&os_version=12.3.1&device_platform=iphone&build_number=65014&device_type=iPhone9,1&iid=74239983401&idfa=F39B285A-4B4F-4874-9D7E-C728A892BF6D"
+data = {“aweme_id": video_id}
+headers = {
+“sdk-version": “1",
+“x-Tt-Token": “00fc1e7950db67b5f43a312e9265cdfee513ea70c36d918c871f3bb553347f3db50ffca143b8722327b345816a75efca071d",
+“User-Agent": “Aweme 6.5.0 rv:65014 (iPhone; iOS 12.3.1; en_CN) Cronet",
+“Content-Type": “application/x-www-form-urlencoded",
+“Cookie": “tt_webid=6636348554880222728; __tea_sdk__user_unique_id=6636348554880222728; odin_tt=76d9b82d6e6f2ddfc99719a5b5d44a7d703cf977f0f7bddf8537f93920d57cb9ec33162ee47868b760f6b09e69209bb2f90bad220b75678af850a0dfa9f056e2; install_id=74239983401; ttreq=1$dab0516952a4157c0c11d4993533c09d6e45fc94; sid_guard=fc1e7950db67b5f43a312e9265cdfee5%7C1559955316%7C5184000%7CWed%2C+07-Aug-2019+00%3A55%3A16+GMT; uid_tt=0afcb06309f632d872799ec0ac3b2c80; sid_tt=fc1e7950db67b5f43a312e9265cdfee5; sessionid=fc1e7950db67b5f43a312e9265cdfee5",
+“X-Khronos": “1559956401",
+“X-Gorgon": “8300000000002e40eee38cad71d14037bd1385d18bc973f094f5",
+}
+ret = {}
+res = requests.post(url, data=data, headers=headers)
+if res.status_code == 200:
+# tk_logger.info(“video detail raw:%s" % res.content.decode(“utf8"))
+jsn = json.loads(res.content)
+detail = jsn.get(“aweme_detail", {})
+video_info = get_video_info(detail)
+user_info = get_user_info(detail)
+play_addr = get_play_address(detail)
+video_cover = get_video_cover(detail)
+ret[“video_info"] = video_info
+ret[“user_info"] = user_info
+ret[“play_addr"] = play_addr
+ret[“video_cover"] = video_cover
+else:
+raise TKException(“get video detail failed [%s][%d]" % (url, res.status_code))
+return ret
+————————————————
+版权声明：本文为CSDN博主「嗨学编程」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/fei347795790/article/details/96432139
+
+(function() {
+$(function(){
+__M.require("douyin_falcon:page/reflow_user/index").init({
+uid: "110677980134",
+dytk: "061ae6e81229e178146aa674327eba89"
+});
+});
+})();
+————————————————
+版权声明：本文为CSDN博主「嗨学编程」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/fei347795790/article/details/96432139
+
+
+https://aweme.snssdk.com/aweme/v1/play/?video_id=v0300fbd0000bi7qkas7u4t1oko3sp50&line=0&ratio=540p&media_type=4&vr_type=0&improve_bitrate=0&is_play_url=1
+
+分享地址：
+https://www.iesdouyin.com/share/video/6750200599184297228/?region=CN&mid=6750187224442096398&u_code=17h81ha7f&titleType=title&utm_source=copy_link&utm_campaign=client_share&utm_medium=android&app=aweme
+https://www.iesdouyin.com/share/video/6749505574716624140/?region=CN&mid=6750187224442096398&u_code=17h81ha7f&titleType=title&utm_source=copy_link&utm_campaign=client_share&utm_medium=android&app=aweme
+https://www.iesdouyin.com/share/video/6749765511288048904/?region=CN&mid=6750187224442096398&u_code=17h81ha7f&titleType=title&utm_source=copy_link&utm_campaign=client_share&utm_medium=android&app=aweme
+个人视频地址：
+https://www.iesdouyin.com/share/video/6669588984710073603/?region=CN&mid=6549090508164205320&u_code=17h81ha7f&titleType=title&utm_source=copy_link&utm_campaign=client_share&utm_medium=android&app=aweme
+https://www.iesdouyin.com/share/video/6669568213820378372/?region=CN&mid=6549090508164205320&u_code=17h81ha7f&titleType=title&utm_source=copy_link&utm_campaign=client_share&utm_medium=android&app=aweme
+提取无水印视频地址：
+http://3g.gljlw.com/diy/down.php?jlwdown=http://v3-dy-x.ixigua.com/c7c3b7cce1cb5a5074fae70c7b5c58e4/5daebdd3/video/m/220f72dd3bb304743f1b578d4d4aa0d08d41163d4bdf000086ebeae4e85c/?a=1128&br=3078&cr=0&cs=0&dr=0&ds=6&er=&l=201910221528560101560301429816F4&lr=&qs=0&rc=ajVya2Rmam95cDMzO2kzM0ApaTk8PGc5Nzs7N2Q7ODo1ZGcvM19kbGtqa2lfLS02LS9zcy0tYC4vYi5hNF8tL2IzYWM6Yw%3D%3D
+http://v6-dy.ixigua.com/9e5e7a418f1fc38a144b8fae3c57d656/5daebed6/video/m/22008cd0f1c5dfe4495a2b096a9ba8332161163e65c80000873892a266ff/?a=1128&br=526&cr=0&cs=0&dr=0&ds=6&er=&l=201910221532410101560160701907E2&lr=&qs=0&rc=M295d3M7PHZycDMzaGkzM0ApOjxpOWRnNzxpN2k6NTQ5aWcyMjFlNTNxYmpfLS01LS9zczY0LmBfYDEuXl9jYS4zNDU6Yw%3D%3D
+
+https://aweme.snssdk.com/aweme/v1/playwm/?s_vid=93f1b41336a8b7a442dbf1c29c6bbc56bd553f771fa5ecf34427dff6bd50914af3de4da8df346149ffe1e866248d5b75510a843841e0dcd14175deddac755f60&line=0

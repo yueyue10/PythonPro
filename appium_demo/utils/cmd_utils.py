@@ -35,6 +35,8 @@ class CmdCode:
     start_adb_service = 'adb start-server'
     # 打包成apk
     setup_exe = 'pyinstaller -F  %s'
+    # Android adb查看当前设备所运行的包名 ，activity名
+    cur_activity = 'adb shell dumpsys window | findstr mCurrentFocus'
 
 
 def cmd_system(cmd_code, show_log=False):

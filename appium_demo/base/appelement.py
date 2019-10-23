@@ -19,7 +19,31 @@ class AppElement:
             print("element.resourceId", element.get_attribute("resourceId"))
             return element
         except:
-            print("element can't find")
+            print(element_id + "element can't find")
+
+    def findElementText(self, text, timeout=3):
+        return self.driver.find_element_by_android_uiautomator("text(\"%s\")" % text)
+
+    def findElementTextWait(self, text, timeout=3):
+        try:
+            wait = WebDriverWait(self.driver, timeout)
+            element = wait.until(lambda diver: self.driver.find_element_by_android_uiautomator("text(\"%s\")" % text))
+            print("element.resourceId", element.get_attribute("resourceId"))
+            return element
+        except:
+            print(text + "element can't find")
+
+    def findElementClass(self, class_name, position=0, parent=driver):
+        try:
+            element = parent.find_elements_by_class_name(class_name)
+            if position == -1:
+                return element
+            else:
+                element = element[position]
+                return element
+            print("element.resourceId", element.get_attribute("resourceId"))
+        except:
+            print(class_name + "element can't find")
 
     def swipeUp(self, t=500, n=1):
         '''向上滑动屏幕'''

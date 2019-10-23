@@ -1,0 +1,27 @@
+def get_user_video_list_by_uid(user_id, cursor=0):
+url = 'https://www.iesdouyin.com/web/api/v2/aweme/post/?’
+sign, dytk = signature(user_id)
+tk_logger.info(“sign:%s,dytk:%s” % (sign, dytk))
+if sign is None or dytk is None:
+tk_logger.log(“sign [%s] or dytk [%s] is none” % (sign, dytk))
+return None
+headers = dict_merge(CHROME_HEADER, {
+“Accept”: “application/json”,
+“X-Requested-With”: “XMLHttpRequest”,
+})
+params = {
+“user_id”: user_id,
+“count”: “21”,
+“max_cursor”: cursor,
+“aid”: “1128”,
+“_signature”: sign,
+“dytk”: dytk
+}
+res = requests.get(url, headers=headers, params=params)
+tk_logger.info(“request url: %s” % res.url)
+content = res.content.decode(“utf8”)
+jsn = json.loads(content)
+return jsn
+————————————————
+版权声明：本文为CSDN博主「嗨学编程」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/fei347795790/article/details/96432139
