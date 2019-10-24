@@ -1,7 +1,8 @@
 import os
 
-from other.tktask import save_path
 from utils.string_utils import validate_title
+
+save_path = r'E:\迅雷下载\抖音视频'
 
 
 class FileSys():
