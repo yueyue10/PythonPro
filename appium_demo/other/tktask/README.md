@@ -1,5 +1,6 @@
 # 下载抖音视频的工具类
 可以下载抖音用户上传的视频，以及收藏的视频
+down.py里面新增判断视频已经下载就不再请求视频下载地址以及下载文件操作
 
 运行过程：
 ---
@@ -16,14 +17,15 @@
     * m_signstr、Cookie也可以从浏览器获取但有时效性，可能是几分钟吧。
     ![ic_tk_html.png](https://github.com/yueyue10/PythonPro/blob/master/appium_demo/doc/ic_tk_html.png?raw=true)
     ![ic_videos.png](https://raw.githubusercontent.com/yueyue10/PythonPro/master/appium_demo/doc/ic_videos.png)
-* 运行down.py下载视频** 里面的有些参数 **
+* 运行down.py下载视频** 里面有些参数不同用户是有区别的 **
     * PreDownload._reg_video_url里面的mid是测试发现分享其他的视频用同一个即可。也因为这个的原因导致一部分视频的分享地址错误
     * DownloadRobot.m_save_path里面定义视频下载地址
     ![ic_down.png](https://github.com/yueyue10/PythonPro/blob/master/appium_demo/doc/ic_down.png?raw=true)
     ![ic_down_videos.png](https://github.com/yueyue10/PythonPro/blob/master/appium_demo/doc/ic_down_videos.png?raw=true)
 
 > 其中遇到的问题：
-* 使用多线程下载视频时(20个线程同时下载视频)，只有第一个视频是正常的，其他视频都出现问题了。
+>
+> 使用多线程下载视频时(20个线程同时下载视频)，只有第一个视频是正常的，其他视频都出现问题了。
     * 解决方法：去掉下载视频方法中的断点续传
 
     

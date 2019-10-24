@@ -132,7 +132,11 @@ class PreDownload(object):
     # 视频分享地址模板{%s}需要替换为视频id
     # mid=675018722444209639,这个是通过抖音分享个人的视频和别人的视频对比后得到的。这里如果是个人的视频统一用个人的mid，如果是他人的统一用一个他人的mid即可。
     # mid测试过程可参考helper_txt文件夹下test.txt里面的几个地址对比
-    _reg_video_url = r'https://www.iesdouyin.com/share/video/%s/?region=CN&mid=675018722444209639&u_code=17h81ha7f&titleType=title&utm_source=copy_link&utm_campaign=client_share&utm_medium=android&app=aweme'
+    _mid = 675018722444209639
+    # _mid = 6750930452921502478
+    # _mid = 6750966737484712712
+    # _mid = 6751028020338936590
+    _reg_video_url = r'https://www.iesdouyin.com/share/video/%s/?region=CN&mid=%s&u_code=17h81ha7f&titleType=title&utm_source=copy_link&utm_campaign=client_share&utm_medium=android&app=aweme'
 
     # 开始资源预准备和下载
     def start(self, thread_num=20):
@@ -166,7 +170,7 @@ class PreDownload(object):
         for y in range(0, len(_group_item_data)):
             video_name = _group_item_data[y][0]
             video_id = _group_item_data[y][1]
-            video_url = self._reg_video_url % video_id
+            video_url = self._reg_video_url % (video_id, self._mid)
             file_sys = FileSys()
             con = file_sys.contain_file(video_name)
             if not con:  # 如果文件名不存在
