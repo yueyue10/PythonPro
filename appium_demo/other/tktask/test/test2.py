@@ -1,7 +1,7 @@
 import os
-import re
 
 from other.tktask import save_path
+from utils.string_utils import validate_title
 
 
 class FileSys():
@@ -22,12 +22,6 @@ class FileSys():
             self.m_files = self.get_files(save_path)
             in_dir = self.m_files.__contains__(video_name + '.mp4')
         return in_dir
-
-
-def validate_title(title):
-    rstr = r"[\/\\\:\*\?\"\<\>\|]"  # '/ \ : * ? " < > |'
-    new_title = re.sub(rstr, "_", title)  # 替换为下划线
-    return new_title
 
 
 if __name__ == '__main__':
