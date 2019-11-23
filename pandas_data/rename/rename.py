@@ -2,16 +2,15 @@ import json
 import os
 import time
 
-m_filter = [".mp4"]  # 设置过滤后的文件类型 当然可以设置多个类型
-rename_ext = '.mp4'
 
-
+# 文件对象
 class File(object):
     def __init__(self, old_name, new_name):
         self.old_name = old_name
         self.new_name = new_name
 
 
+# 获取文件夹下的文件
 def get_all_file_path(dirname):
     result = []  # 所有的文件
     for maindir, subdir, file_name_list in os.walk(dirname):
@@ -28,6 +27,7 @@ def get_all_file_path(dirname):
     return result
 
 
+# 获取时间戳
 def get_time_stamp():
     t = time.time()
     time_stamp = int(round(t * 1000000))
@@ -36,6 +36,7 @@ def get_time_stamp():
     return time_str + rename_ext
 
 
+# 保存json信息到文件中
 def save_json_str(json_str):
     name = path.split("/")[-1]
     json_path = os.path.join(path, name + '.json')
@@ -59,6 +60,10 @@ def rename_files(dir_path):
 
 
 if __name__ == '__main__':
-    path = "E:/迅雷下载/抖音视频/pet-smart"
+    # 需要重命名视频的文件夹
+    path = "E:/Users/Python/PythonPro/pandas_data/rename"
+    # 需要重命名的文件类型
+    m_filter = [".mp4"]  # 设置过滤后的文件类型 当然可以设置多个类型
+    # 重命名后的文件类型
+    rename_ext = '.mp4'
     rename_files(path)
-    # get_time_stamp()
