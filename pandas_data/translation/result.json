@@ -1,0 +1,16 @@
+{
+  "tSpeakUrl": "http://openapi.youdao.com/ttsapi?q=Iflytek+is+the+largest+provider+of+intelligent+voice+technology+in+China.&langType=en&sign=5F8C9B50E3D91C2B313D745280FF76B0&salt=1576483080274&voice=4&format=mp3&appKey=2cb19ffaea3031cc",
+  "query": "\xe7\xa7\x91\xe5\xa4\xa7\xe8\xae\xaf\xe9\xa3\x9e\xe6\x98\xaf\xe4\xb8\xad\xe5\x9b\xbd\xe6\x9c\x80\xe5\xa4\xa7\xe7\x9a\x84\xe6\x99\xba\xe8\x83\xbd\xe8\xaf\xad\xe9\x9f\xb3\xe6\x8a\x80\xe6\x9c\xaf\xe6\x8f\x90\xe4\xbe\x9b\xe5\x95\x86\xe3\x80\x82",
+  "translation": [
+    "Iflytek is the largest provider of intelligent voice technology in China."
+  ],
+  "errorCode": "0",
+  "dict": {
+    "url": "yddict://m.youdao.com/dict?le=eng&q=%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E%E6%98%AF%E4%B8%AD%E5%9B%BD%E6%9C%80%E5%A4%A7%E7%9A%84%E6%99%BA%E8%83%BD%E8%AF%AD%E9%9F%B3%E6%8A%80%E6%9C%AF%E6%8F%90%E4%BE%9B%E5%95%86%E3%80%82"
+  },
+  "webdict": {
+    "url": "http://m.youdao.com/dict?le=eng&q=%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E%E6%98%AF%E4%B8%AD%E5%9B%BD%E6%9C%80%E5%A4%A7%E7%9A%84%E6%99%BA%E8%83%BD%E8%AF%AD%E9%9F%B3%E6%8A%80%E6%9C%AF%E6%8F%90%E4%BE%9B%E5%95%86%E3%80%82"
+  },
+  "l": "zh-CHS2en",
+  "speakUrl": "http://openapi.youdao.com/ttsapi?q=%E7%A7%91%E5%A4%A7%E8%AE%AF%E9%A3%9E%E6%98%AF%E4%B8%AD%E5%9B%BD%E6%9C%80%E5%A4%A7%E7%9A%84%E6%99%BA%E8%83%BD%E8%AF%AD%E9%9F%B3%E6%8A%80%E6%9C%AF%E6%8F%90%E4%BE%9B%E5%95%86%E3%80%82&langType=zh-CHS&sign=5F149156A6E7C5F4B59482CA405019BE&salt=1576483080274&voice=4&format=mp3&appKey=2cb19ffaea3031cc"
+}
