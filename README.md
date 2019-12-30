@@ -11,11 +11,13 @@
 | appium_demo                |          [appium测试框架][3]                    |
 | save-log                   |          [python保存日志到数据库][4]                    |
 | tktask                     |          [python下载抖音视频][5]                    |
+| pandas_data                |          [python图表、翻译、图片识别等sdk][6]                    |
 
-[1]:https://github.com/yueyue10/PythonPro/tree/master/python_spider
-[2]:https://github.com/yueyue10/PythonPro/tree/master/python_demo
-[3]:https://github.com/yueyue10/PythonPro/tree/master/appium_demo
-[4]:https://github.com/yueyue10/PythonPro/tree/master/save-log
-[5]:https://github.com/yueyue10/PythonPro/tree/master/appium_demo/other/tktask
+[1]:python_spider
+[2]:python_demo
+[3]:appium_demo
+[4]:save-log
+[5]:appium_demo/other/tktask
+[6]:pandas_data
 
 [![Stargazers over time](https://starchart.cc/yueyue10/PythonPro.svg)](https://starchart.cc/yueyue10/PythonPro)     
