@@ -1,11 +1,12 @@
 import json
+import random
+import time
 
 import requests
 from lxml import etree
 
 from poetry.string_utils import format_str_list, format_str_info
 
-DIR = "grade"
 DOMIN = 'http://www.shicimingju.com'
 # 课本古诗地址
 SHICI_TEXTBOOK_URL = DOMIN + '/cate?cate_id=4'
@@ -99,6 +100,7 @@ class Spider(object):
     # 获取html页码内容
     @staticmethod
     def get_html_text(url, headers=None):
+        time.sleep(random.uniform(0.5, 1.5))
         response = requests.get(url, headers=headers, timeout=(5, 60))
         if response.status_code == 200:
             content = response.text
@@ -107,7 +109,7 @@ class Spider(object):
     # 保存json数据到json文件中
     @staticmethod
     def save_json_in_json(name, jsonstr):
-        with open('{}/{}.json'.format(DIR, name), 'w') as f:
+        with open('{}.json'.format(name), 'w') as f:
             # json.dump(jsonstr, f, ensure_ascii=False)
             f.write(jsonstr)
 
