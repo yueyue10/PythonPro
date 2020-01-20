@@ -61,7 +61,7 @@ def rename_files(dir_path):
 
 if __name__ == '__main__':
     # 需要重命名视频的文件夹
-    path = "E:/Users/Python/PythonPro/pandas_data/rename"
+    path = "E:/迅雷下载/抖音视频/film-classical/film-society"
     # 需要重命名的文件类型
     m_filter = [".mp4"]  # 设置过滤后的文件类型 当然可以设置多个类型
     # 重命名后的文件类型
