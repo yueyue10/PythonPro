@@ -59,6 +59,7 @@ class Spider(object):
             image = mark.xpath('.//a/img/@src')[0]
             href = mark.xpath('.//a/@href')[0]
             title = mark.xpath('.//h3/a/text()')[0]
+            # 保存
             gradepoetry = self.get_detail_from_mark(title, image, href)
             gradepoetry_json = json.dumps(gradepoetry, default=lambda obj: obj.__dict__, sort_keys=True, indent=4)
             self.save_json_in_json(gradepoetry.title, gradepoetry_json)
