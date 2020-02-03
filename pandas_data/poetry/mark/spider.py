@@ -62,7 +62,7 @@ class Spider(object):
             # 保存
             gradepoetry = self.get_detail_from_mark(title, image, href)
             gradepoetry_json = json.dumps(gradepoetry, default=lambda obj: obj.__dict__, sort_keys=True, indent=4)
-            self.save_json_in_json(gradepoetry.title, gradepoetry_json)
+            self.save_json_in_json("markPoetrys", gradepoetry_json)
             print(gradepoetry_json)
 
     # 获取古诗详情内容
@@ -142,7 +142,7 @@ class Spider(object):
     # 保存json数据到json文件中
     @staticmethod
     def save_json_in_json(name, jsonstr):
-        with open('{}.json'.format(name), 'w') as f:
+        with open('{}.json'.format(name), 'a') as f:
             # json.dump(jsonstr, f, ensure_ascii=False)
             f.write(jsonstr)
 
