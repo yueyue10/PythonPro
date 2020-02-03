@@ -9,16 +9,16 @@ from poetry.string_utils import format_str_list, format_str_info
 
 DOMIN = 'http://www.shicimingju.com'
 # 书籍目录地址
-SHICI_BOOK_INFO_URL = DOMIN + '/book/sanguoyanyi.html'
-SHICI_BOOK_INFO_URL = DOMIN + '/book/shuihuzhuan.html'
-SHICI_BOOK_INFO_URL = DOMIN + '/book/xiyouji.html'
+# SHICI_BOOK_INFO_URL = DOMIN + '/book/sanguoyanyi.html'
+# SHICI_BOOK_INFO_URL = DOMIN + '/book/shuihuzhuan.html'
+# SHICI_BOOK_INFO_URL = DOMIN + '/book/xiyouji.html'
 SHICI_BOOK_INFO_URL = DOMIN + '/book/hongloumeng.html'
 
 
 # 分类古诗实体类
 class BookBean(object):
     def __init__(self, name, image, year, author, desc, chapters):
-        self.name = name
+        self.bookName = name
         self.image = image
         self.year = year
         self.author = author
@@ -26,7 +26,8 @@ class BookBean(object):
         self.chapters = chapters
 
     def __str__(self):
-        return "".join(str(item) for item in (self.name, self.image, self.year, self.author, self.desc, self.chapters))
+        return "".join(
+            str(item) for item in (self.bookName, self.image, self.year, self.author, self.desc, self.chapters))
 
     def to_json(self):
         return json.dumps(self, default=lambda o: o.__dict__,
@@ -35,22 +36,25 @@ class BookBean(object):
 
 # 古诗详情实体类
 class ChapterBean(object):
-    def __init__(self, title, paragraphs):
-        self.title = format_str_info(title)
+    def __init__(self, book_name, chapter_name, paragraphs):
+        self.bookName = book_name
+        self.chapterName = chapter_name
         self.paragraphs = paragraphs
 
     def __str__(self):
-        return "".join(str(item) for item in (self.title, self.paragraphs))
+        return "".join(str(item) for item in (self.bookName, self.chapterName, self.paragraphs))
 
 
 class Spider(object):
+    bookName = '书名'
+
     def __init__(self, url):
         self.url = url
 
     def start(self):
         bookbean = self.get_info_from_book(self.url)
         bookbean_json = json.dumps(bookbean, default=lambda obj: obj.__dict__, sort_keys=True, indent=4)
-        self.save_json_in_json(bookbean.name, bookbean_json)
+        self.save_json_in_json(self.bookName + "目录", bookbean_json)
         print(bookbean_json)
 
     # 获取书籍目录内容
@@ -59,6 +63,7 @@ class Spider(object):
         com_html = etree.HTML(html)
         book_div = com_html.xpath('//*[@id="main_left"]/div[@class="card bookmark-list"]')[0]
         name = book_div.xpath('./h1/text()')[0]
+        self.bookName = name
         img = book_div.xpath('./div/img')[0].xpath('@src')[0]
         image = DOMIN + img
         year = book_div.xpath('./div/p')[0].xpath('./text()')[0]
@@ -71,8 +76,12 @@ class Spider(object):
         chapters = []
         for index, href in enumerate(chapters_href):
             chapterbean = self.get_book_chapter(href)
-            chapters.append(chapterbean)
+            chapterbean_json = json.dumps(chapterbean, default=lambda obj: obj.__dict__, sort_keys=True, indent=4)
+            self.save_json_in_json(self.bookName + "内容", chapterbean_json)
             print('{}-第{}章保存成功！'.format(name, index + 1))
+        # 获取目录信息
+        for chapter in chapters_text:
+            chapters.append(chapter)
         bookbean = BookBean(name, image, year, author, desc, chapters)
         return bookbean
 
@@ -89,7 +98,7 @@ class Spider(object):
         paragraphs_text = chapter_div.xpath('./div[@class="chapter_content"]/text()')
         paragraphs_text = format_str_list(paragraphs_text)
         paragraphs = paragraphs_p if len(paragraphs_p) > 0 else paragraphs_text
-        chapterbean = ChapterBean(title, paragraphs)
+        chapterbean = ChapterBean(self.bookName, title, paragraphs)
         return chapterbean
 
     # 获取html页码内容
@@ -104,7 +113,7 @@ class Spider(object):
     # 保存json数据到json文件中
     @staticmethod
     def save_json_in_json(name, jsonstr):
-        with open('{}.json'.format(name), 'w') as f:
+        with open('{}.json'.format(name), 'a') as f:
             # json.dump(jsonstr, f, ensure_ascii=False)
             f.write(jsonstr)
 
