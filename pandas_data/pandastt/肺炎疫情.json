@@ -1,0 +1,545 @@
+{
+    "caseNewConfirm": {
+        "new_confirm_hb": 371,
+        "new_confirm_nhb": 398
+    },
+    "caseNowConfirm": {
+        "now_confirm_hb": 1303,
+        "now_confirm_nhb": 1327
+    },
+    "case_date": "1/26",
+    "case_new_confirm": 769,
+    "case_new_suspect": 3806,
+    "case_now_confirm": 2630,
+    "case_now_suspect": 5794,
+    "case_total_confirm": 2761,
+    "num_cure_total": 51,
+    "num_death_total": 80
+}{
+    "caseNewConfirm": {
+        "new_confirm_hb": 1291,
+        "new_confirm_nhb": 480
+    },
+    "caseNowConfirm": {
+        "now_confirm_hb": 2567,
+        "now_confirm_nhb": 1802
+    },
+    "case_date": "1/27",
+    "case_new_confirm": 1771,
+    "case_new_suspect": 2077,
+    "case_now_confirm": 4369,
+    "case_now_suspect": 6973,
+    "case_total_confirm": 4535,
+    "num_cure_total": 60,
+    "num_death_total": 106
+}{
+    "caseNewConfirm": {
+        "new_confirm_hb": 840,
+        "new_confirm_nhb": 619
+    },
+    "caseNowConfirm": {
+        "now_confirm_hb": 3349,
+        "now_confirm_nhb": 2413
+    },
+    "case_date": "1/28",
+    "case_new_confirm": 1459,
+    "case_new_suspect": 3248,
+    "case_now_confirm": 5762,
+    "case_now_suspect": 9239,
+    "case_total_confirm": 5997,
+    "num_cure_total": 103,
+    "num_death_total": 132
+}{
+    "caseNewConfirm": {
+        "new_confirm_hb": 1032,
+        "new_confirm_nhb": 705
+    },
+    "caseNowConfirm": {
+        "now_confirm_hb": 4334,
+        "now_confirm_nhb": 3106
+    },
+    "case_date": "1/29",
+    "case_new_confirm": 1737,
+    "case_new_suspect": 4148,
+    "case_now_confirm": 7440,
+    "case_now_suspect": 12167,
+    "case_total_confirm": 7736,
+    "num_cure_total": 126,
+    "num_death_total": 170
+}{
+    "caseNewConfirm": {
+        "new_confirm_hb": 1220,
+        "new_confirm_nhb": 762
+    },
+    "caseNowConfirm": {
+        "now_confirm_hb": 5486,
+        "now_confirm_nhb": 3850
+    },
+    "case_date": "1/30",
+    "case_new_confirm": 1982,
+    "case_new_suspect": 4812,
+    "case_now_confirm": 9336,
+    "case_now_suspect": 15238,
+    "case_total_confirm": 9720,
+    "num_cure_total": 171,
+    "num_death_total": 213
+}{
+    "caseNewConfirm": {
+        "new_confirm_hb": 1347,
+        "new_confirm_nhb": 755
+    },
+    "caseNowConfirm": {
+        "now_confirm_hb": 6738,
+        "now_confirm_nhb": 4581
+    },
+    "case_date": "1/31",
+    "case_new_confirm": 2102,
+    "case_new_suspect": 5019,
+    "case_now_confirm": 11319,
+    "case_now_suspect": 17988,
+    "case_total_confirm": 11821,
+    "num_cure_total": 243,
+    "num_death_total": 259
+}{
+    "caseNewConfirm": {
+        "new_confirm_hb": 1921,
+        "new_confirm_nhb": 669
+    },
+    "caseNowConfirm": {
+        "now_confirm_hb": 8565,
+        "now_confirm_nhb": 5214
+    },
+    "case_date": "2/1",
+    "case_new_confirm": 2590,
+    "case_new_suspect": 4562,
+    "case_now_confirm": 13779,
+    "case_now_suspect": 19544,
+    "case_total_confirm": 14411,
+    "num_cure_total": 328,
+    "num_death_total": 304
+}{
+    "caseNewConfirm": {
+        "new_confirm_hb": 2103,
+        "new_confirm_nhb": 726
+    },
+    "caseNowConfirm": {
+        "now_confirm_hb": 10532,
+        "now_confirm_nhb": 5870
+    },
+    "case_date": "2/2",
+    "case_new_confirm": 2829,
+    "case_new_suspect": 5173,
+    "case_now_confirm": 16402,
+    "case_now_suspect": 21558,
+    "case_total_confirm": 17238,
+    "num_cure_total": 475,
+    "num_death_total": 361
+}{
+    "caseNewConfirm": {
+        "new_confirm_hb": 2345,
+        "new_confirm_nhb": 890
+    },
+    "caseNowConfirm": {
+        "now_confirm_hb": 12712,
+        "now_confirm_nhb": 6702
+    },
+    "case_date": "2/3",
+    "case_new_confirm": 3235,
+    "case_new_suspect": 5072,
+    "case_now_confirm": 19414,
+    "case_now_suspect": 23214,
+    "case_total_confirm": 20471,
+    "num_cure_total": 632,
+    "num_death_total": 425
+}{
+    "caseNewConfirm": {
+        "new_confirm_hb": 3156,
+        "new_confirm_nhb": 731
+    },
+    "caseNowConfirm": {
+        "now_confirm_hb": 15679,
+        "now_confirm_nhb": 7301
+    },
+    "case_date": "2/4",
+    "case_new_confirm": 3887,
+    "case_new_suspect": 3971,
+    "case_now_confirm": 22980,
+    "case_now_suspect": 23260,
+    "case_total_confirm": 24363,
+    "num_cure_total": 892,
+    "num_death_total": 491
+}{
+    "caseNewConfirm": {
+        "new_confirm_hb": 2987,
+        "new_confirm_nhb": 707
+    },
+    "caseNowConfirm": {
+        "now_confirm_hb": 18483,
+        "now_confirm_nhb": 7860
+    },
+    "case_date": "2/5",
+    "case_new_confirm": 3694,
+    "case_new_suspect": 5328,
+    "case_now_confirm": 26343,
+    "case_now_suspect": 24702,
+    "case_total_confirm": 28060,
+    "num_cure_total": 1153,
+    "num_death_total": 564
+}{
+    "caseNewConfirm": {
+        "new_confirm_hb": 2447,
+        "new_confirm_nhb": 704
+    },
+    "caseNowConfirm": {
+        "now_confirm_hb": 20677,
+        "now_confirm_nhb": 8355
+    },
+    "case_date": "2/6",
+    "case_new_confirm": 3151,
+    "case_new_suspect": 4833,
+    "case_now_confirm": 29032,
+    "case_now_suspect": 26359,
+    "case_total_confirm": 31211,
+    "num_cure_total": 1542,
+    "num_death_total": 637
+}{
+    "caseNewConfirm": {
+        "new_confirm_hb": 2841,
+        "new_confirm_nhb": 558
+    },
+    "caseNowConfirm": {
+        "now_confirm_hb": 23139,
+        "now_confirm_nhb": 8686
+    },
+    "case_date": "2/7",
+    "case_new_confirm": 3399,
+    "case_new_suspect": 4214,
+    "case_now_confirm": 31825,
+    "case_now_suspect": 27657,
+    "case_total_confirm": 34598,
+    "num_cure_total": 2050,
+    "num_death_total": 723
+}{
+    "caseNewConfirm": {
+        "new_confirm_hb": 2147,
+        "new_confirm_nhb": 506
+    },
+    "caseNowConfirm": {
+        "now_confirm_hb": 24881,
+        "now_confirm_nhb": 8907
+    },
+    "case_date": "2/8",
+    "case_new_confirm": 2653,
+    "case_new_suspect": 3916,
+    "case_now_confirm": 33788,
+    "case_now_suspect": 28942,
+    "case_total_confirm": 37251,
+    "num_cure_total": 2651,
+    "num_death_total": 812
+}{
+    "caseNewConfirm": {
+        "new_confirm_hb": 2618,
+        "new_confirm_nhb": 455
+    },
+    "caseNowConfirm": {
+        "now_confirm_hb": 26965,
+        "now_confirm_nhb": 9078
+    },
+    "case_date": "2/9",
+    "case_new_confirm": 3073,
+    "case_new_suspect": 4008,
+    "case_now_confirm": 36043,
+    "case_now_suspect": 23589,
+    "case_total_confirm": 40235,
+    "num_cure_total": 3283,
+    "num_death_total": 909
+}{
+    "caseNewConfirm": {
+        "new_confirm_hb": 2097,
+        "new_confirm_nhb": 387
+    },
+    "caseNowConfirm": {
+        "now_confirm_hb": 28532,
+        "now_confirm_nhb": 9161
+    },
+    "case_date": "2/10",
+    "case_new_confirm": 2484,
+    "case_new_suspect": 3536,
+    "case_now_confirm": 37693,
+    "case_now_suspect": 21675,
+    "case_total_confirm": 42708,
+    "num_cure_total": 3998,
+    "num_death_total": 1017
+}{
+    "caseNewConfirm": {
+        "new_confirm_hb": 1638,
+        "new_confirm_nhb": 384
+    },
+    "caseNowConfirm": {
+        "now_confirm_hb": 29659,
+        "now_confirm_nhb": 9215
+    },
+    "case_date": "2/11",
+    "case_new_confirm": 2022,
+    "case_new_suspect": 3342,
+    "case_now_confirm": 38874,
+    "case_now_suspect": 16067,
+    "case_total_confirm": 44730,
+    "num_cure_total": 4742,
+    "num_death_total": 1114
+}{
+    "caseNewConfirm": {
+        "new_confirm_hb": 14840,
+        "new_confirm_nhb": 313
+    },
+    "caseNowConfirm": {
+        "now_confirm_hb": 43455,
+        "now_confirm_nhb": 9144
+    },
+    "case_date": "2/12",
+    "case_new_confirm": 15153,
+    "case_new_suspect": 2807,
+    "case_now_confirm": 52599,
+    "case_now_suspect": 13435,
+    "case_total_confirm": 59882,
+    "num_cure_total": 5915,
+    "num_death_total": 1368
+}{
+    "caseNewConfirm": {
+        "new_confirm_hb": 4823,
+        "new_confirm_nhb": 270
+    },
+    "caseNowConfirm": {
+        "now_confirm_hb": 46806,
+        "now_confirm_nhb": 9017
+    },
+    "case_date": "2/13",
+    "case_new_confirm": 5093,
+    "case_new_suspect": 2450,
+    "case_now_confirm": 55823,
+    "case_now_suspect": 10109,
+    "case_total_confirm": 63932,
+    "num_cure_total": 6728,
+    "num_death_total": 1381
+}{
+    "caseNewConfirm": {
+        "new_confirm_hb": 2420,
+        "new_confirm_nhb": 224
+    },
+    "caseNowConfirm": {
+        "now_confirm_hb": 48175,
+        "now_confirm_nhb": 8776
+    },
+    "case_date": "2/14",
+    "case_new_confirm": 2644,
+    "case_new_suspect": 2277,
+    "case_now_confirm": 56951,
+    "case_now_suspect": 8969,
+    "case_total_confirm": 66576,
+    "num_cure_total": 8101,
+    "num_death_total": 1524
+}{
+    "caseNewConfirm": {
+        "new_confirm_hb": 1843,
+        "new_confirm_nhb": 166
+    },
+    "caseNowConfirm": {
+        "now_confirm_hb": 49030,
+        "now_confirm_nhb": 8463
+    },
+    "case_date": "2/15",
+    "case_new_confirm": 2009,
+    "case_new_suspect": 1918,
+    "case_now_confirm": 57493,
+    "case_now_suspect": 8228,
+    "case_total_confirm": 68584,
+    "num_cure_total": 9425,
+    "num_death_total": 1666
+}{
+    "caseNewConfirm": {
+        "new_confirm_hb": 1933,
+        "new_confirm_nhb": 118
+    },
+    "caseNowConfirm": {
+        "now_confirm_hb": 49847,
+        "now_confirm_nhb": 8163
+    },
+    "case_date": "2/16",
+    "case_new_confirm": 2051,
+    "case_new_suspect": 1563,
+    "case_now_confirm": 58010,
+    "case_now_suspect": 7264,
+    "case_total_confirm": 70635,
+    "num_cure_total": 10853,
+    "num_death_total": 1772
+}{
+    "caseNewConfirm": {
+        "new_confirm_hb": 1807,
+        "new_confirm_nhb": 84
+    },
+    "caseNowConfirm": {
+        "now_confirm_hb": 50338,
+        "now_confirm_nhb": 7759
+    },
+    "case_date": "2/17",
+    "case_new_confirm": 1891,
+    "case_new_suspect": 1432,
+    "case_now_confirm": 58097,
+    "case_now_suspect": 6242,
+    "case_total_confirm": 72528,
+    "num_cure_total": 12561,
+    "num_death_total": 1870
+}{
+    "caseNewConfirm": {
+        "new_confirm_hb": 1693,
+        "new_confirm_nhb": 58
+    },
+    "caseNowConfirm": {
+        "now_confirm_hb": 50633,
+        "now_confirm_nhb": 7253
+    },
+    "case_date": "2/18",
+    "case_new_confirm": 1751,
+    "case_new_suspect": 1185,
+    "case_now_confirm": 57886,
+    "case_now_suspect": 5248,
+    "case_total_confirm": 74279,
+    "num_cure_total": 14387,
+    "num_death_total": 2006
+}{
+    "caseNewConfirm": {
+        "new_confirm_hb": 775,
+        "new_confirm_nhb": 50
+    },
+    "caseNowConfirm": {
+        "now_confirm_hb": 50091,
+        "now_confirm_nhb": 6719
+    },
+    "case_date": "2/19",
+    "case_new_confirm": 825,
+    "case_new_suspect": 1277,
+    "case_now_confirm": 56810,
+    "case_now_suspect": 4922,
+    "case_total_confirm": 75101,
+    "num_cure_total": 16170,
+    "num_death_total": 2121
+}{
+    "caseNewConfirm": {
+        "new_confirm_hb": 631,
+        "new_confirm_nhb": 261
+    },
+    "caseNowConfirm": {
+        "now_confirm_hb": 49156,
+        "now_confirm_nhb": 6319
+    },
+    "case_date": "2/20",
+    "case_new_confirm": 892,
+    "case_new_suspect": 1614,
+    "case_now_confirm": 55475,
+    "case_now_suspect": 5206,
+    "case_total_confirm": 75993,
+    "num_cure_total": 18279,
+    "num_death_total": 2239
+}{
+    "caseNewConfirm": {
+        "new_confirm_hb": 366,
+        "new_confirm_nhb": 33
+    },
+    "caseNowConfirm": {
+        "now_confirm_hb": 47647,
+        "now_confirm_nhb": 5724
+    },
+    "case_date": "2/21",
+    "case_new_confirm": 399,
+    "case_new_suspect": 1614,
+    "case_now_confirm": 53371,
+    "case_now_suspect": 5365,
+    "case_total_confirm": 76392,
+    "num_cure_total": 20673,
+    "num_death_total": 2348
+}{
+    "caseNewConfirm": {
+        "new_confirm_hb": 630,
+        "new_confirm_nhb": 19
+    },
+    "caseNowConfirm": {
+        "now_confirm_hb": 46439,
+        "now_confirm_nhb": 5250
+    },
+    "case_date": "2/22",
+    "case_new_confirm": 649,
+    "case_new_suspect": 882,
+    "case_now_confirm": 51689,
+    "case_now_suspect": 4148,
+    "case_total_confirm": 77041,
+    "num_cure_total": 22907,
+    "num_death_total": 2445
+}{
+    "caseNewConfirm": {
+        "new_confirm_hb": 398,
+        "new_confirm_nhb": 18
+    },
+    "caseNowConfirm": {
+        "now_confirm_hb": 45054,
+        "now_confirm_nhb": 4856
+    },
+    "case_date": "2/23",
+    "case_new_confirm": 416,
+    "case_new_suspect": 620,
+    "case_now_confirm": 49910,
+    "case_now_suspect": 3434,
+    "case_total_confirm": 77262,
+    "num_cure_total": 24757,
+    "num_death_total": 2595
+}{
+    "caseNewConfirm": {
+        "new_confirm_hb": 499,
+        "new_confirm_nhb": 18
+    },
+    "caseNowConfirm": {
+        "now_confirm_hb": 43369,
+        "now_confirm_nhb": 4391
+    },
+    "case_date": "2/24",
+    "case_new_confirm": 517,
+    "case_new_suspect": 530,
+    "case_now_confirm": 47760,
+    "case_now_suspect": 2824,
+    "case_total_confirm": 77779,
+    "num_cure_total": 27353,
+    "num_death_total": 2666
+}{
+    "caseNewConfirm": {
+        "new_confirm_hb": 401,
+        "new_confirm_nhb": 10
+    },
+    "caseNowConfirm": {
+        "now_confirm_hb": 41660,
+        "now_confirm_nhb": 4037
+    },
+    "case_date": "2/25",
+    "case_new_confirm": 411,
+    "case_new_suspect": 439,
+    "case_now_confirm": 45697,
+    "case_now_suspect": 2491,
+    "case_total_confirm": 78190,
+    "num_cure_total": 29775,
+    "num_death_total": 2718
+}{
+    "caseNewConfirm": {
+        "new_confirm_hb": 409,
+        "new_confirm_nhb": 31
+    },
+    "caseNowConfirm": {
+        "now_confirm_hb": 39755,
+        "now_confirm_nhb": 3597
+    },
+    "case_date": "2/26",
+    "case_new_confirm": 440,
+    "case_new_suspect": 508,
+    "case_now_confirm": 43352,
+    "case_now_suspect": 2358,
+    "case_total_confirm": 78630,
+    "num_cure_total": 32531,
+    "num_death_total": 2747
+}
