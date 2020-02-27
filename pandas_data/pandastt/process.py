@@ -24,13 +24,6 @@ class CovidVirus(object):
         self.excel_file = excel_file
         self.json_file = json_file
 
-    def save_excel_to_json(self):
-        json_data = self.get_excel_data()
-        json_str = json.dumps(json_data, default=lambda obj: obj.__dict__, sort_keys=True, indent=4)
-        print('json_data', json_data)
-        print('json_str', json_str)
-        self.save_json_str(self.json_file, json_str)
-
     def get_excel_data(self):
         data = pd.read_excel(self.excel_file)
         case_data = []
@@ -54,6 +47,9 @@ class CovidVirus(object):
                                   case_new_suspect, case_now_confirm, caseNowConfirm,
                                   case_now_suspect, case_total_confirm, num_cure_total,
                                   num_death_total)
+            json_str = json.dumps(covidBean, default=lambda obj: obj.__dict__, sort_keys=True, indent=4)
+            print('json_str\n', json_str)
+            self.save_json_str(self.json_file, json_str)
             case_data.append(covidBean)
         return case_data
 
@@ -66,7 +62,7 @@ class CovidVirus(object):
     # 保存json信息到文件中
     @staticmethod
     def save_json_str(file_name, json_str):
-        with open('{}.json'.format(file_name), 'w') as f:
+        with open('{}.json'.format(file_name), 'a') as f:
             f.write(json_str)
 
 
@@ -74,4 +70,4 @@ if __name__ == '__main__':
     excel_path = 'resource/肺炎疫情_new.xlsx'
     json_name = '肺炎疫情'
     cv = CovidVirus(excel_path, json_name)
-    cv.save_excel_to_json()
+    cv.get_excel_data()
