@@ -17,9 +17,9 @@ class MainActivity(AppElement):
 
     def mine_test(self):
         self.waitTime(3)
-        mineBtn = self.findElementText('我')
+        mineBtn = self.findElementText('酒店')
         mineBtn.click()
-        minefragment = MineFragment()
+        # minefragment = MineFragment()
 
     def elementTest(self):
         e3z = self.findElementId('e3z')

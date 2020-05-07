@@ -29,8 +29,8 @@ douyin_caps = {
     # 'deviceName': 'emulator-5555',
     'deviceName': '3SC7N16B07000927',
     'platformVersion': '8.0',
-    'appPackage': 'com.ss.android.ugc.aweme',
-    'appActivity': 'com.ss.android.ugc.aweme.splash.SplashActivity',
+    'appPackage': 'ctrip.android.view',
+    'appActivity': 'ctrip.business.splash.CtripSplashActivity',
     'noReset': "True",
     'autoGrantPermissions': "True",
     'launchTimeout': "1999",  # 假设它挂起和失败会话之前以ms毫秒为单位等待仪器的时间
@@ -44,6 +44,12 @@ douyin_caps = {
 
 
 class AppConfig:
-    element_path = "com.ennova.dreamlf:id/"
+    element_path = "ctrip.android.view"
     phone_num = "18810126510"
     service_path = 'http://127.0.0.1:4723/wd/hub'
+
+# aapt dump badging E:\Users\AS_Project\tibetoperation\app\release\release.apk
+# aapt dump badging E:\Users\AS_Project\tibetoperation\app\release\122.apk
+# ctrip.android.view
+# ctrip.business.splash.CtripSplashActivity
+# com.squareup.leakcanary.internal.DisplayLeakActivity
