@@ -27,8 +27,10 @@ douyin_caps = {
     'platformName': 'Android',
     'automationName': 'UiAutomator1',
     # 'deviceName': 'emulator-5555',
-    'deviceName': '3SC7N16B07000927',
-    'platformVersion': '8.0',
+    # 'deviceName': '3SC7N16B07000927',
+    # 'platformVersion': '8.0',
+    'deviceName': '5705b13e',
+    'platformVersion': '7.1.2',
     'appPackage': 'ctrip.android.view',
     'appActivity': 'ctrip.business.splash.CtripSplashActivity',
     'noReset': "True",
@@ -39,7 +41,8 @@ douyin_caps = {
     'androidInstallTimeout': "1999",  # 用于等待apk安装到设备的超时（以毫秒为单位）。默认为90000
     'avdLaunchTimeout': "1999",  # avd启动并连接到ADB需要多长时间（默认值120000）
     'avdReadyTimeout': "1999",  # avd完成启动动画需要多长时间（默认120000）
-    'newCommandTimeout': "319"  # 在假定客户端退出并结束会话之前，Appium将等待来自客户端的新命令（以秒为单位）
+    'newCommandTimeout': "319",  # 在假定客户端退出并结束会话之前，Appium将等待来自客户端的新命令（以秒为单位）
+    'unicodeKeyboard': 'True'  # 使用默认键盘
 }
 
 
