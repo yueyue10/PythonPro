@@ -4,6 +4,8 @@ import json
 import requests
 from lxml import etree
 
+from poetry.utils import ComHeaders
+
 DOMIN = 'http://www.shicimingju.com'
 # 课本分类地址
 SHICI_MARK_URL = DOMIN + '/shicimark'
@@ -49,7 +51,7 @@ class Spider(object):
     # 获取html页码内容
     @staticmethod
     def get_html_text(url, headers=None):
-        response = requests.get(url, headers=headers, timeout=(5, 60))
+        response = requests.get(url, headers=ComHeaders.pc_headers, timeout=(5, 60))
         if response.status_code == 200:
             content = response.text
         return content

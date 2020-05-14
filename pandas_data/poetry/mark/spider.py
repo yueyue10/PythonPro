@@ -6,6 +6,7 @@ import requests
 from lxml import etree
 
 from poetry.string_utils import format_str_list, format_str_info
+from poetry.utils import ComHeaders
 
 DOMIN = 'http://www.shicimingju.com'
 # 课本分类地址
@@ -134,7 +135,7 @@ class Spider(object):
     @staticmethod
     def get_html_text(url, headers=None):
         time.sleep(random.uniform(0.5, 1.5))
-        response = requests.get(url, headers=headers, timeout=(5, 60))
+        response = requests.get(url, headers=ComHeaders.pc_headers, timeout=(5, 60))
         if response.status_code == 200:
             content = response.text
         return content
