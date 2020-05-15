@@ -1,4 +1,4 @@
-# PythonPro
+# PythonPro(使用时需要打开一级目录里面的项目使用，如python_spider...)
 
 > 多个python项目集合
 > 
