@@ -14,7 +14,8 @@ TOP250_Url = 'https://movie.douban.com/top250?start={}&filter='
 
 # 电影实体类
 class MovieBean(object):
-    def __init__(self, title, image, score, comment, director, actor, mtime, area, mtype, index):
+    def __init__(self, subject, title, image, score, comment, director, actor, mtime, area, mtype, index):
+        self.subject = format_str_info(subject)
         self.title = format_str_info(title)
         self.image = format_str_info(image)
         self.score = format_str_info(score)
@@ -57,6 +58,7 @@ class Spider(object):
         for movieItem in movieLis:
             image = movieItem.xpath('./div/div[@class="pic"]/a/img/@src')[0]
             index = movieItem.xpath('./div/div[@class="pic"]/em/text()')[0]
+            subject = movieItem.xpath('./div/div[@class="info"]/div[@class="hd"]/a/@href')[0]
             title = movieItem.xpath('./div/div[@class="info"]/div[@class="hd"]/a/span/text()')[0]
             content_text = movieItem.xpath('./div/div[@class="info"]/div[@class="bd"]/p[1]/text()')
             # print(content_text)
@@ -77,7 +79,7 @@ class Spider(object):
             if comment:
                 comment = comment[0]
             # print(desc)
-            movieBean = MovieBean(title, image, score, comment, director, actor, mtime, area, mtype, index)
+            movieBean = MovieBean(subject, title, image, score, comment, director, actor, mtime, area, mtype, index)
             movieList.append(movieBean)
         return movieList
 
