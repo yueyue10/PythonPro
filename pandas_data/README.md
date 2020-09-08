@@ -14,9 +14,10 @@
 | Project              |       Project介绍(点击查看详情)    |
 | --------             |          :----:                      |
 | poetry               |          [从网上采集诗词内容到json文件中][5]                    |
-| pandastt             |          [利用pandas处理数据表][1]                    |
 | color                |          [爬取颜色网站的数据][6]                    |
 | douban               |          [爬取豆瓣网站的数据][7]                    |
+| chinesebqb           |          [爬取表情包网站的数据][8]                    |
+| pandastt             |          [利用pandas处理数据表][1]                    |
 | rename               |          [重命名文件夹下的文件功能][3]                    |
 | identify             |          [百度识图api测试代码][2]                    |
 | translation          |          [有道翻译sdk][4]                    |
@@ -28,3 +29,4 @@
 [5]:poetry
 [6]:color
 [7]:douban
+[8]:chinesebqb
