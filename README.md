@@ -16,6 +16,7 @@
 | save-log                   |          [python保存日志到数据库][4]                    |
 | tktask                     |          [python下载抖音视频][5]                    |
 | pandas_data                |          [Python爬取诗词网站数据、python图表、翻译、图片识别等sdk][6]                    |
+| browser                |          [模仿浏览器操作][7]                    |
 
 [1]:python_spider
 [2]:python_demo
@@ -23,5 +24,6 @@
 [4]:save-log
 [5]:appium_demo/other/tktask
 [6]:pandas_data
+[7]:browser
 
 [![Stargazers over time](https://starchart.cc/yueyue10/PythonPro.svg)](https://starchart.cc/yueyue10/PythonPro)     

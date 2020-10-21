@@ -1,0 +1,30 @@
+# 抖音个人中心网页版地址
+https://www.iesdouyin.com/share/user/104713356413
+# 用户收藏视频接口
+https://www.iesdouyin.com/web/api/v2/aweme/like/?user_id=104713356413&sec_uid=&count=21&max_cursor=0&aid=1128&_signature=dxwI-xAVKrWfxiqGrhDYM3ccCO&dytk=ac5e995179f3a8a16d1f5e7266ea6a08
+
+    Request Headers:
+    :authority: www.iesdouyin.com
+    :method: GET
+    :path: /web/api/v2/aweme/like/?user_id=104713356413&sec_uid=&count=21&max_cursor=0&aid=1128&_signature=P8JIbhAQYnLXGGoTjG8Tiz.CSH&dytk=ac5e995179f3a8a16d1f5e7266ea6a08
+    :scheme: https
+    accept: application/json
+    accept-encoding: gzip, deflate, br
+    accept-language: zh-CN,zh;q=0.9
+    cache-control: no-cache
+    cookie: _ga=GA1.2.221321654.1571713017; _gid=GA1.2.1458812847.1571713017; tt_webid=6750458410351052291
+    pragma: no-cache
+    referer: https://www.iesdouyin.com/share/user/104713356413
+    sec-fetch-mode: cors
+    sec-fetch-site: same-origin
+    user-agent: Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1
+    x-requested-with: XMLHttpRequest
+
+    Query String Parameters:
+    user_id: 104713356413
+    sec_uid:
+    count: 21
+    max_cursor: 0
+    aid: 1128
+    _signature: dxwI-xAVKrWfxiqGrhDYM3ccCO
+    dytk: ac5e995179f3a8a16d1f5e7266ea6a08

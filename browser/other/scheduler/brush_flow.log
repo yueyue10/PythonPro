@@ -1,0 +1,131 @@
+2019-08-05 15:45:00,080  __init__/__init__.py:73  _________brush start_________2019-08-05 15:45:00
+2019-08-05 15:45:01,751  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://182.34.35.122:44625HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 403 Forbidden')))
+2019-08-05 15:46:31,997  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://106.60.24.223:36560HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x03FE7830>, 'Connection to 106.60.24.223 timed out. (connect timeout=5)'))
+2019-08-05 15:47:04,669  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://144.255.148.111:45197HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x03D7F670>, 'Connection to 144.255.148.111 timed out. (connect timeout=5)'))
+2019-08-05 15:47:35,537  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://114.239.149.39:25108HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x03D7FB50>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')))
+2019-08-05 15:50:08,656  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://59.52.185.203:38831HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x040067F0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')))
+2019-08-05 15:50:31,107  __init__/__init__.py:73  _________brush end_________
+2019-08-05 15:50:31
+2019-08-05 16:45:00,063  __init__/__init__.py:73  _________brush start_________2019-08-05 16:45:00
+2019-08-05 16:45:01,385  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://171.80.81.177:40784HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 403 Forbidden')))
+2019-08-05 16:46:06,534  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://223.240.248.132:41118HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x0400F9B0>, 'Connection to 223.240.248.132 timed out. (connect timeout=5)'))
+2019-08-05 16:48:09,103  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://49.65.161.98:41969HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ProxyError('Cannot connect to proxy.', timeout('timed out')))
+2019-08-05 16:50:16,372  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://117.70.39.104:40582HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x0400F1B0>, 'Connection to 117.70.39.104 timed out. (connect timeout=5)'))
+2019-08-05 16:50:50,625  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://111.177.183.54:28477HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x04006150>, 'Connection to 111.177.183.54 timed out. (connect timeout=5)'))
+2019-08-05 16:51:18,323  __init__/__init__.py:73  _________brush end_________
+2019-08-05 16:51:18
+2019-08-05 17:45:00,055  __init__/__init__.py:73  _________brush start_________2019-08-05 17:45:00
+2019-08-05 17:45:05,165  base/base.py:131  Job "job_brush_flow (trigger: cron[day_of_week='mon-sun', minute='45'], next run at: 2019-08-05 18:45:00 CST)" raised an exception
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Python37-32\lib\site-packages\urllib3\connectionpool.py", line 387, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "C:\Program Files (x86)\Python37-32\lib\site-packages\urllib3\connectionpool.py", line 383, in _make_request
+    httplib_response = conn.getresponse()
+  File "C:\Program Files (x86)\Python37-32\lib\http\client.py", line 1321, in getresponse
+    response.begin()
+  File "C:\Program Files (x86)\Python37-32\lib\http\client.py", line 296, in begin
+    version, status, reason = self._read_status()
+  File "C:\Program Files (x86)\Python37-32\lib\http\client.py", line 257, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "C:\Program Files (x86)\Python37-32\lib\socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Python37-32\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Program Files (x86)\Python37-32\lib\site-packages\urllib3\connectionpool.py", line 641, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Program Files (x86)\Python37-32\lib\site-packages\urllib3\util\retry.py", line 368, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "C:\Program Files (x86)\Python37-32\lib\site-packages\urllib3\packages\six.py", line 686, in reraise
+    raise value
+  File "C:\Program Files (x86)\Python37-32\lib\site-packages\urllib3\connectionpool.py", line 603, in urlopen
+    chunked=chunked)
+  File "C:\Program Files (x86)\Python37-32\lib\site-packages\urllib3\connectionpool.py", line 389, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "C:\Program Files (x86)\Python37-32\lib\site-packages\urllib3\connectionpool.py", line 307, in _raise_timeout
+    raise ReadTimeoutError(self, url, "Read timed out. (read timeout=%s)" % timeout_value)
+urllib3.exceptions.ReadTimeoutError: HTTPConnectionPool(host='127.0.0.1', port=60461): Read timed out. (read timeout=5)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Python37-32\lib\site-packages\apscheduler\executors\base.py", line 125, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+  File "E:/Users/Github/MyApplication/python_project/python_demo/appium_demo/other/scheduler/go_brush_flow.py", line 19, in job_brush_flow
+    mogu.start(_type='mogu')
+  File "E:\Users\Github\MyApplication\python_project\python_demo\appium_demo\other\visitors\mogu_visitor.py", line 51, in start
+    if _type == 'mogu': self.get_mo_gu()
+  File "E:\Users\Github\MyApplication\python_project\python_demo\appium_demo\other\visitors\mogu_visitor.py", line 66, in get_mo_gu
+    req = requests.get(self.mo_gu_url, headers=headers, timeout=5)
+  File "C:\Program Files (x86)\Python37-32\lib\site-packages\requests\api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Program Files (x86)\Python37-32\lib\site-packages\requests\api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Program Files (x86)\Python37-32\lib\site-packages\requests\sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Program Files (x86)\Python37-32\lib\site-packages\requests\sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Program Files (x86)\Python37-32\lib\site-packages\requests\adapters.py", line 529, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPConnectionPool(host='127.0.0.1', port=60461): Read timed out. (read timeout=5)
+2019-08-18 06:35:00,375  __init__/__init__.py:73  _________brush start_________2019-08-18 06:35:00
+2019-08-18 06:35:01,752  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://183.149.225.199:46367HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 403 Forbidden')))
+2019-08-18 06:36:22,030  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://113.221.46.133:41857HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x041D81B0>, 'Connection to 113.221.46.133 timed out. (connect timeout=5)'))
+2019-08-18 06:38:41,193  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://171.11.140.124:35507HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x041F30F0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')))
+2019-08-18 06:39:03,564  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://125.116.109.110:49219HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x041F3C30>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')))
+2019-08-18 06:41:38,959  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://111.227.147.196:20464HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x00D31810>, 'Connection to 111.227.147.196 timed out. (connect timeout=5)'))
+2019-08-18 06:42:05,557  __init__/__init__.py:73  _________brush end_________
+2019-08-18 06:42:05
+2019-08-18 07:35:00,001  __init__/__init__.py:73  _________brush start_________2019-08-18 07:35:00
+2019-08-18 07:35:01,266  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://180.117.221.245:25526HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 403 Forbidden')))
+2019-08-18 07:36:34,609  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://171.43.17.148:35475HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x041D84D0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')))
+2019-08-18 07:36:55,238  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://180.171.214.6:30476list index out of range
+2019-08-18 07:38:23,735  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://220.164.23.159:42521HTTPSConnectionPool(host='blog.csdn.net', port=443): Read timed out.
+2019-08-18 07:40:48,237  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://223.198.3.178:30337HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x00D4AAD0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')))
+2019-08-18 07:41:11,585  __init__/__init__.py:73  _________brush end_________
+2019-08-18 07:41:11
+2019-08-18 08:35:00,001  __init__/__init__.py:73  _________brush start_________2019-08-18 08:35:00
+2019-08-18 08:35:01,641  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://175.153.23.237:45761HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 403 Forbidden')))
+2019-08-18 08:35:17,892  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://116.239.105.247:45384list index out of range
+2019-08-18 08:36:18,533  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://111.181.51.117:39367list index out of range
+2019-08-18 08:38:05,950  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://59.42.100.38:37110HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ProxyError('Cannot connect to proxy.', timeout('timed out')))
+2019-08-18 08:39:43,912  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://182.47.2.84:42641HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x041F3990>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')))
+2019-08-18 08:40:04,551  __init__/__init__.py:73  _________brush end_________
+2019-08-18 08:40:04
+2019-08-18 17:31:00,003  __init__/__init__.py:73  _________brush start_________2019-08-18 17:31:00
+2019-08-18 17:31:01,695  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://113.101.159.209:33425HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 403 Forbidden')))
+2019-08-18 17:31:22,294  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://182.246.238.177:43154HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x038B1E10>, 'Connection to 182.246.238.177 timed out. (connect timeout=5)'))
+2019-08-18 17:32:31,930  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://60.167.135.118:47877HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x038B15F0>, 'Connection to 60.167.135.118 timed out. (connect timeout=5)'))
+2019-08-18 17:34:12,856  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://125.119.194.89:25138HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x03D49B10>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')))
+2019-08-18 17:34:39,241  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://144.255.148.117:32756HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x03D57DF0>, 'Connection to 144.255.148.117 timed out. (connect timeout=5)'))
+2019-08-18 17:35:06,564  __init__/__init__.py:73  _________brush end_________
+2019-08-18 17:35:06
+2019-08-18 18:31:00,017  __init__/__init__.py:73  _________brush start_________2019-08-18 18:31:00
+2019-08-18 18:31:01,320  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://122.231.113.120:32725HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 403 Forbidden')))
+2019-08-18 18:36:51,341  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://223.198.14.154:34037HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x038B12F0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')))
+2019-08-18 18:37:14,422  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://114.220.149.112:30136HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x0388A8D0>, 'Connection to 114.220.149.112 timed out. (connect timeout=5)'))
+2019-08-18 18:37:41,276  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://119.138.195.79:44662HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x03D495D0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')))
+2019-08-18 18:38:21,713  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://114.104.138.65:28536HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x006338F0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')))
+2019-08-18 18:38:39,011  __init__/__init__.py:73  _________brush end_________
+2019-08-18 18:38:39
+2019-08-18 19:31:00,005  __init__/__init__.py:73  _________brush start_________2019-08-18 19:31:00
+2019-08-18 19:31:01,442  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://116.55.2.64:23233HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 403 Forbidden')))
+2019-08-18 19:31:40,541  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://59.55.42.248:22266HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x00642C90>, 'Connection to 59.55.42.248 timed out. (connect timeout=5)'))
+2019-08-18 19:32:51,029  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://112.195.43.241:20642HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x00642610>, 'Connection to 112.195.43.241 timed out. (connect timeout=5)'))
+2019-08-18 19:36:35,342  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://113.76.58.236:24976HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ProxyError('Cannot connect to proxy.', timeout('timed out')))
+2019-08-18 19:38:00,783  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://59.52.186.193:31972HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x03D57E70>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')))
+2019-08-18 19:38:21,543  __init__/__init__.py:73  _________brush end_________
+2019-08-18 19:38:21
+2019-08-18 20:31:00,029  __init__/__init__.py:73  _________brush start_________2019-08-18 20:31:00
+2019-08-18 20:31:01,346  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://182.38.44.178:22990HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 403 Forbidden')))
+2019-08-18 20:31:25,821  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://218.20.124.57:30821HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ConnectTimeoutError(<urllib3.connection.VerifiedHTTPSConnection object at 0x00642970>, 'Connection to 218.20.124.57 timed out. (connect timeout=5)'))
+2019-08-18 20:32:13,627  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://123.180.68.76:41787list index out of range
+2019-08-18 20:33:54,338  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://219.137.113.253:25814HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ProxyError('Cannot connect to proxy.', timeout('timed out')))
+2019-08-18 20:34:28,739  __init__/__init__.py:73  ip不可用__blog.csdn__>>https://14.118.232.239:35095HTTPSConnectionPool(host='blog.csdn.net', port=443): Max retries exceeded with url: /a_yue10/article/details/97392747 (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x00642F10>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。')))
+2019-08-18 20:34:49,854  __init__/__init__.py:73  _________brush end_________
+2019-08-18 20:34:49
