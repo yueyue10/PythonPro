@@ -7,9 +7,6 @@ from hualian.utils import user_agent_mobile
 from hualian.yzm.codeiden import baidu_2
 
 
-# 各种移动端
-
-
 class SeleniumClient:
     order_url = r'https://wechat-applet.beijing-hualian.com/maotai/maotai_88.html?token' \
                 r'=ZjGY2cANhyi16PWu7Rn0pMwY78DOaSU0E1J1ZgxioOe=&channelId=14&moutaiPromoId=88&phone=18810126510'
@@ -38,12 +35,15 @@ class SeleniumClient:
     def pre_order(self):
         pre_order = self.browser.find_elements_by_xpath('/html/body/div[1]/div[4]')
         pre_order = pre_order[0]
-        print("预约", pre_order.text)
+        print("预约文本", pre_order.text)
+        # 预约是否可以点击
         while pre_order.text != "预约抢购":
             time.sleep(1)
-            print("预约", pre_order.text)
-        dialog_show = False
+            # self.hint_dialog()
+            print("预约文本", pre_order.text)
         pre_order.click()
+        # 弹窗是否显示
+        dialog_show = False
         while not dialog_show:
             time.sleep(1)
             dialog_show = self.input_dialog()
@@ -52,12 +52,23 @@ class SeleniumClient:
         self.input_number()
         self.input_yzm()
         self.confirm_take_order()
-        time.sleep(5)
+        time.sleep(30)
+
+    def hint_dialog(self):
+        try:
+            hint_dialog = self.browser.find_element_by_xpath('/html/body/div[4]')
+            print("hint_dialog", hint_dialog)
+            confirm_btn = self.browser.find_element_by_xpath('/html/body/div[4]/div[3]/a[2]')
+            confirm_btn1 = self.browser.find_element_by_xpath('/html/body/div[4]/div[3]/a')
+            confirm_btn.click()
+            confirm_btn1.click()
+        except Exception as ec:
+            print("hint_dialog", "没显示")
 
     # 判断弹窗是否出现
     def input_dialog(self):
         input_dialog = self.browser.find_element_by_xpath('/html/body/div[2]')
-        print(type(input_dialog))
+        # print(type(input_dialog))
         # if not isinstance(input_dialog, list):
         #     return False
         dialog_style = input_dialog.get_attribute("style")
