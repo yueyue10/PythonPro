@@ -104,6 +104,7 @@ class SeleniumClient:
         code_str = baidu_2(code_src)
         code_input = self.browser.find_elements_by_xpath('/html/body/div[2]/div[1]/div[3]/div[9]/div/div[2]/input')[0]
         code_input.send_keys(code_str)
+        time.sleep(10)
 
     def confirm_take_order(self):
         take_order = self.browser.find_elements_by_xpath('/html/body/div[2]/div[1]/div[3]/div[11]')[0]

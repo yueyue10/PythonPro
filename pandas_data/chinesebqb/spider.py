@@ -37,8 +37,8 @@ class Spider(object):
         bgq_list = []
         html_detail = self.get_html_text(href)
         com_html = etree.HTML(html_detail)
-        bqb_table = com_html.xpath('//*[@class="post-inner thin "]/div[@class="entry-content"]/table[1]')[0]
-        # print(bqb_table)
+        bqb_table = com_html.xpath('/html/body/main/article/div[1]/div/table[2]')[0]
+        print(bqb_table)
         bqb_trs = bqb_table.xpath('./tbody/tr')
         for tr_index, bqb_tr in enumerate(bqb_trs):
             # if tr_index != 0: continue
