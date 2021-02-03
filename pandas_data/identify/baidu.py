@@ -1,7 +1,7 @@
 # encoding:utf-8
 import requests
-import requests
-import base64
+from pywebio.input import *
+from pywebio.output import *
 
 
 def get_token():
@@ -12,11 +12,12 @@ def get_token():
     response = requests.get(host)
     if response:
         # print(response.json())
-        jsonOjb=response.json()
+        jsonOjb = response.json()
         print(type(jsonOjb))
-        access_token=jsonOjb.get("access_token")
+        access_token = jsonOjb.get("access_token")
         print(access_token)
         return access_token
+
 
 def analysis():
     '''
@@ -24,9 +25,19 @@ def analysis():
     '''
 
     request_url = "https://aip.baidubce.com/rest/2.0/image-classify/v2/advanced_general"
-    # 二进制方式打开图片文件
-    f = open('1.jpg', 'rb')
-    img = base64.b64encode(f.read())
+    # 方法一：二进制方式打开图片文件
+    # f = open('1.jpg', 'rb')
+    # img = base64.b64encode(f.read())
+
+    # 方法二：使用[pywebio.input]获取文件
+    with use_scope('title'):
+        put_html('<h2 style="text-align:center">选择图片进行识别</h2>')
+    img = file_upload("选择图片", accept="image/*")
+
+    with use_scope('title', clear=True):
+        put_html('<h2 style="text-align:center">识别报告</h2>')
+        put_html('<h3>文件名：%s</h3>' % (img['filename']))
+    img = img['dataurl']
 
     params = {"image": img}
     access_token = get_token()
@@ -34,7 +45,16 @@ def analysis():
     headers = {'content-type': 'application/x-www-form-urlencoded'}
     response = requests.post(request_url, data=params, headers=headers)
     if response:
-        print(response.json())
+        res_json = response.json()
+        res_list = res_json['result']
+        res_table = [['相似度', '类别', '关键字']]
+        for item in res_list:
+            item_list = [item['score'], item['root'], item['keyword']]
+            res_table.append(item_list)
+        print(res_table)
+        # # 表格输出
+        put_html('<br/><h4>识别结果：</h4>')
+        put_table(res_table)
 
 
 if __name__ == '__main__':
