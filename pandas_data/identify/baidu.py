@@ -1,8 +1,8 @@
 # encoding:utf-8
 import time
-from functools import partial
 
 import requests
+from pywebio import start_server
 from pywebio.input import *
 from pywebio.output import *
 
@@ -49,6 +49,7 @@ def analysis(img):
 
 
 def start():
+    print("开始")
     # 方法二：使用[pywebio.input]获取文件
     with use_scope('title', clear=True):
         put_html('<h2 style="text-align:center">选择图片进行识别</h2>')
@@ -79,8 +80,11 @@ def start():
         if confirm == '返回':
             start()
         elif confirm == '关闭':
-            pass
+            server.stop()  # todo 关闭应用
 
 
 if __name__ == '__main__':
-    start()
+    # 1.程序直接运行到浏览器
+    # start()
+    # 2.将应用放到web服务中，可以打包到exe应用宝的功能里面
+    server = start_server(start, port=8089, auto_open_webbrowser=True, debug=True)
