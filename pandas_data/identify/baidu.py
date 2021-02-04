@@ -80,7 +80,8 @@ def start():
         if confirm == '返回':
             start()
         elif confirm == '关闭':
-            server.stop()  # todo 关闭应用
+            pass
+            # server.stop()  # todo 关闭应用
 
 
 if __name__ == '__main__':
