@@ -39,7 +39,21 @@ def test_time():
     print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))  # 日期格式化
 
 
+def test_dir():
+    path = "face_data"
+    image_paths = []
+    for f in os.listdir(path):
+        image_paths.append(os.path.join(path, f))
+    print("image_paths", image_paths)
+    for imagePath in image_paths:
+        image_name = os.path.split(imagePath)[-1]
+        name = image_name.split(".")[0]
+        id_pre = image_name.split(".")[1]
+        print(image_name, "      ", name, "      ", id_pre)
+
+
 if __name__ == '__main__':
     # test_path()
     # test_for()
-    test_time()
+    # test_time()
+    test_dir()

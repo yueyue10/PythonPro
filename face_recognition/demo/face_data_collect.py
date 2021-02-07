@@ -6,20 +6,15 @@ import numpy as np
 """
 人脸数据收集
 """
-base_path = os.path.dirname(os.__file__)
-
-width = 640
-height = 480
-h_wid = int(width / 2)
-h_hei = int(height / 2)
 
 
 class Collection:
 
-    def __init__(self, face_id):
+    def __init__(self, face_name, face_id):
+        self.face_name = face_name
+        self.face_id = face_id
         self.face_detector = cv2.CascadeClassifier(
-            os.path.join(base_path, r'site-packages\cv2\data\haarcascade_frontalface_default.xml'))
-        self.dir_path = self.init_dir(face_id)
+            os.path.join(conf.base_path, r'site-packages\cv2\data\haarcascade_frontalface_default.xml'))
         print("开始获取摄像头数据...")
         # 调用笔记本内置摄像头，所以参数为0，如果有其他的摄像头可以调整参数为1，2
         self.cap = cv2.VideoCapture(0)
@@ -29,19 +24,10 @@ class Collection:
         self.time_cache = None  # 记录保存图片的时间戳缓存
         self.save_user_pictures()
 
-    @staticmethod
-    def init_dir(face_id):
-        m_path = os.getcwd()
-        # 本地保存图片根路径（请确保根路径存在）
-        dir_path = os.path.join(m_path, r'face_data\user{}'.format(face_id))
-        if not os.path.exists(dir_path):
-            os.mkdir(dir_path)
-        return dir_path
-
     # 保存一定数量的照片
     def save_user_pictures(self, total_count=10):
-        self.cap.set(3, width)  # set video width
-        self.cap.set(4, height)  # set video height
+        self.cap.set(3, conf.width)  # set video width
+        self.cap.set(4, conf.height)  # set video height
         print('\n 看着摄像机获取照片...')
         while True:
             # 从摄像头读取图片
@@ -57,11 +43,12 @@ class Collection:
                 self.draw_rect(img, faces, gray)
             else:
                 if not self.can_save:
-                    cv2.putText(img, "saving {} picture".format(self.pic_count), (h_wid - 50, h_hei),
+                    cv2.putText(img, "saving {} picture".format(self.pic_count), (conf.h_wid - 50, conf.h_hei),
                                 cv2.FONT_HERSHEY_SIMPLEX, 0.8, (208, 2, 27), 1)
                     print("保存图片中...")
                 else:
-                    cv2.putText(img, "no face data,look the camera", (h_wid - 150, h_hei), cv2.FONT_HERSHEY_SIMPLEX,
+                    cv2.putText(img, "no face data,look the camera", (conf.h_wid - 150, conf.h_hei),
+                                cv2.FONT_HERSHEY_SIMPLEX,
                                 0.8, (144, 19, 254), 1)
                     print("没有识别到人脸信息，请正对摄像头...")
             self.timer()
@@ -81,7 +68,8 @@ class Collection:
             if show_text and self.can_save:  # 如果只有一个人脸并且可以保存的时候，保存图片
                 self.save_pics(faces, gray)
             else:
-                cv2.putText(img, "here is one more face,keep one face", (h_wid - 100, h_hei), cv2.FONT_HERSHEY_SIMPLEX,
+                cv2.putText(img, "here is one more face,keep one face", (conf.h_wid - 100, conf.h_hei),
+                            cv2.FONT_HERSHEY_SIMPLEX,
                             0.8, (144, 19, 254), 1)
 
     def save_pics(self, faces, gray):
@@ -92,7 +80,7 @@ class Collection:
     def save_pic(self, gray_data):
         self.pic_count += 1
         # 保存图像
-        file_path = '%s/%s%s' % (self.dir_path, str(self.pic_count), '.jpg')
+        file_path = "{}/{}.{}.{}.jpg".format(conf.face_path, self.face_name, self.face_id, self.pic_count)
         cv2.imwrite(file_path, gray_data)
         self.timer(start=True)
 
@@ -112,5 +100,15 @@ class Collection:
         cv2.destroyAllWindows()
 
 
+class Config:
+    base_path = os.path.dirname(os.__file__)
+    face_path = "face_data"
+    width = 640
+    height = 480
+    h_wid = int(width / 2)
+    h_hei = int(height / 2)
+
+
 if __name__ == "__main__":
-    collection = Collection(1)
+    conf = Config()
+    collection = Collection(face_name='zyj', face_id=1000)
