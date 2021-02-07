@@ -2,6 +2,8 @@ import os
 
 import cv2
 
+from demo import conf
+
 """
 人脸检测
 """
@@ -55,30 +57,6 @@ class Recognition:
         cv2.destroyAllWindows()
 
 
-class Config:
-    base_path = os.path.dirname(os.__file__)
-    train_path = 'face_trainer/trainer.yml'
-    face_path = "face_data"
-
-    def __init__(self):
-        self.face_dict = self.get_face_dict()
-
-    def get_face_dict(self):
-        img_paths = []
-        face_dict = {}  # 人脸字典 id-name
-        path = self.face_path
-        for f in os.listdir(path):
-            img_paths.append(os.path.join(path, f))
-        # print("img_paths", img_paths)
-        for img_path in img_paths:
-            img_name = os.path.split(img_path)[-1]
-            face_name = img_name.split(".")[0]
-            face_id = img_name.split(".")[1]
-            face_dict[face_id] = face_name
-        return face_dict
-
-
 if __name__ == '__main__':
-    conf = Config()
     recognition = Recognition()
     recognition.start()

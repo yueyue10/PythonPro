@@ -3,6 +3,8 @@ import time
 import cv2
 import numpy as np
 
+from demo import conf
+
 """
 人脸数据收集
 """
@@ -22,7 +24,6 @@ class Collection:
         self.pic_count = 0  # 照片编号初始值
         self.can_save = True  # 是否可以保存图片
         self.time_cache = None  # 记录保存图片的时间戳缓存
-        self.save_user_pictures()
 
     # 保存一定数量的照片
     def save_user_pictures(self, total_count=10):
@@ -100,15 +101,5 @@ class Collection:
         cv2.destroyAllWindows()
 
 
-class Config:
-    base_path = os.path.dirname(os.__file__)
-    face_path = "face_data"
-    width = 640
-    height = 480
-    h_wid = int(width / 2)
-    h_hei = int(height / 2)
-
-
 if __name__ == "__main__":
-    conf = Config()
     collection = Collection(face_name='zyj', face_id=1000)

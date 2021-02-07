@@ -1,5 +1,6 @@
 import numpy as np
 from PIL import Image
+from demo import conf
 import os
 import cv2
 
@@ -40,12 +41,6 @@ class Training:
         return face_samples, ids
 
 
-class Config:
-    base_path = os.path.dirname(os.__file__)
-    face_path = "face_data"
-
-
 if __name__ == '__main__':
-    conf = Config()
     train = Training()
     train.start()
