@@ -46,7 +46,7 @@ class Recognition:
 
                 cv2.putText(img, str(face_name), (x + 5, y - 5), font, 1, (0, 0, 255), 1)
                 cv2.putText(img, str(confidence), (x + 5, y + h - 5), font, 1, (0, 0, 0), 1)
-            cv2.imshow('camera', img)
+            cv2.imshow('face recognizer', img)
             k = cv2.waitKey(10)
             if k == 27:
                 break

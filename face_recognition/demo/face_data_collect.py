@@ -53,7 +53,7 @@ class Collection:
                                 0.8, (144, 19, 254), 1)
                     print("没有识别到人脸信息，请正对摄像头...")
             self.timer()
-            cv2.imshow('人脸数据收集', img)
+            cv2.imshow('faces collect', img)
             # 保持画面的持续
             k = cv2.waitKey(1)
             if k == 27:  # 通过esc键退出摄像
@@ -68,7 +68,7 @@ class Collection:
             cv2.rectangle(img, (x, y), (x + w, y + w), (255, 0, 0))
             if show_text and self.can_save:  # 如果只有一个人脸并且可以保存的时候，保存图片
                 self.save_pics(faces, gray)
-            else:
+            if not show_text and not self.can_save:  # 如果人脸大于1并且不能保存的时候，提示人脸数量大于1
                 cv2.putText(img, "here is one more face,keep one face", (conf.h_wid - 100, conf.h_hei),
                             cv2.FONT_HERSHEY_SIMPLEX,
                             0.8, (144, 19, 254), 1)

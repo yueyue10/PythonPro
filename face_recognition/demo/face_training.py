@@ -19,7 +19,7 @@ class Training:
         print('Training faces. It will take a few seconds. Wait ...')
         faces, ids = self.get_images_and_labels(conf.face_path)
         self.recognizer.train(faces, np.array(ids))
-        self.recognizer.write(r'face_trainer\trainer.yml')
+        self.recognizer.write(conf.train_path)
         print("{0} faces trained. Exiting Program".format(len(np.unique(ids))))
 
     def get_images_and_labels(self, path):
