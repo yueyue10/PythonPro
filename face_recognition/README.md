@@ -15,6 +15,10 @@ Python实现人脸识别功能
 * 3.人脸数据训练：face_training.py
 * 4.人脸检测：face_detection.py
 
+### todo
+* 1.人名输入，人脸id自增
+* 2.页面窗口自动滚动
+* 3.将视频数据放到前端浏览器显示
 
 
 [Python-cv2]:https://www.cnblogs.com/shizhengwen/p/8719062.html

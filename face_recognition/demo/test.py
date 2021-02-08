@@ -55,6 +55,7 @@ def test_dir():
         print(image_name, "      ", name, "      ", id_pre)
 
 
+# theading.Timer：如何传递参数到回调？http://www.voidcn.com/article/p-olljvaid-bte.html
 class TimerTest(object):
     def __init__(self):
         print("主进行1")
@@ -65,15 +66,17 @@ class TimerTest(object):
 
     def create_timer(self):
         print("开始：", time.strftime('%H:%M:%S', time.localtime()))
-        t = threading.Timer(2, self.repeat)
+        t = threading.Timer(2, self.repeat, ['lv'])
         t.start()
 
     @staticmethod
-    def repeat():
+    def repeat(cc):
         print('结束：', time.strftime('%H:%M:%S', time.localtime()))
+        print('参数：{}'.format(cc))
         # create_timer()
 
 
+# put_html添加style标签：https://github.com/wang0618/PyWebIO/blob/dev/demos/output_usage.py
 class LoadingTest(object):
     def __init__(self):
         self.show_loading()
@@ -101,5 +104,5 @@ if __name__ == '__main__':
     # test_for()
     # test_time()
     # test_dir()
-    # timer = TimerTest()
-    load = LoadingTest()
+    timer = TimerTest()
+    # load = LoadingTest()

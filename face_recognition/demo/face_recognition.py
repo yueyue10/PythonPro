@@ -21,7 +21,7 @@ class Recognition:
         min_w = 0.1 * self.cam.get(3)
         min_h = 0.1 * self.cam.get(4)
         font = cv2.FONT_HERSHEY_SIMPLEX
-        face_dict = conf.face_dict
+        face_dict = conf.get_face_dict()
 
         while True:
             ret, img = self.cam.read()
