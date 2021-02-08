@@ -10,13 +10,14 @@
 
 | Project                    |       Project介绍(点击查看详情)    |
 | --------                   |          :----:                      |
+| face_recognition              |          [python人脸识别][8]                    |
 | python_spider              |          [python爬取github数据][1]                    |
 | python_demo                |          [python基础学习][2]                    |
 | appium_demo                |          [appium测试框架][3]                    |
 | save-log                   |          [python保存日志到数据库][4]                    |
 | tktask                     |          [python下载抖音视频][5]                    |
-| pandas_data                |          [Python爬取诗词网站数据、python图表、翻译、图片识别等sdk][6]                    |
-| browser                |          [模仿浏览器操作][7]                    |
+| pandas_data                |          [Python处理数据][6]                    |
+| browser                    |          [模仿浏览器操作][7]                    |
 
 [1]:python_spider
 [2]:python_demo
@@ -25,5 +26,6 @@
 [5]:appium_demo/other/tktask
 [6]:pandas_data
 [7]:browser
+[8]:face_recognition
 
 [![Stargazers over time](https://starchart.cc/yueyue10/PythonPro.svg)](https://starchart.cc/yueyue10/PythonPro)     

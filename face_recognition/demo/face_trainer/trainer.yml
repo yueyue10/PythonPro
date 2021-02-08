@@ -1,0 +1,16 @@
+%YAML:1.0
+---
+opencv_lbphfaces:
+   threshold: 1.7976931348623157e+308
+   radius: 1
+   neighbors: 8
+   grid_x: 8
+   grid_y: 8
+   histograms:
+   labels: !!opencv-matrix
+      rows: 4
+      cols: 1
+      dt: i
+      data: [ 1000, 1000, 1000, 1000 ]
+   labelsInfo:
+      []
