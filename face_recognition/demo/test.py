@@ -1,8 +1,11 @@
 import datetime
 import os
+import threading
 import time
 
 import numpy as np
+from pywebio.input import *
+from pywebio.output import *
 
 
 # 获取文件路径：https://www.cnblogs.com/dieyaxianju/p/6898254.html
@@ -52,8 +55,51 @@ def test_dir():
         print(image_name, "      ", name, "      ", id_pre)
 
 
+class TimerTest(object):
+    def __init__(self):
+        print("主进行1")
+        self.create_timer()
+        print("主进行2")
+        print("主进行3")
+        print("主进行...")
+
+    def create_timer(self):
+        print("开始：", time.strftime('%H:%M:%S', time.localtime()))
+        t = threading.Timer(2, self.repeat)
+        t.start()
+
+    @staticmethod
+    def repeat():
+        print('结束：', time.strftime('%H:%M:%S', time.localtime()))
+        # create_timer()
+
+
+class LoadingTest(object):
+    def __init__(self):
+        self.show_loading()
+
+    def show_loading(self, timeout=5):
+        print('show_loading------------')
+        with use_scope('loading'):
+            put_loading(color="primary")
+            put_text("加载中...")
+            put_html("""<style>                                           
+                        #pywebio-scope-loading {border: 1px solid red;text-align:center}
+                        </style>
+                        <br/>
+                        """)
+        # loading = threading.Timer(timeout, self.hide_loading)
+        # loading.start()
+
+    def hide_loading(self):
+        print("hide_loading--------------")
+        clear(scope='loading')
+
+
 if __name__ == '__main__':
     # test_path()
     # test_for()
     # test_time()
-    test_dir()
+    # test_dir()
+    # timer = TimerTest()
+    load = LoadingTest()

@@ -1,4 +1,5 @@
 import datetime
+import threading
 import time
 
 from pywebio.input import *
@@ -32,6 +33,7 @@ class FaceTools:
 
     def collect(self, num):
         self.put_title('第一步：采集人脸数据')
+        self.show_loading(timeout=7)
         self.put_text("正在打开电脑相机，请稍后>>>")
         collection = Collection(face_name='zyj', face_id=1000)
         self.put_text("开始获取摄像头数据...")
@@ -44,6 +46,7 @@ class FaceTools:
 
     def training(self):
         self.put_title('第二步：人脸数据训练')
+        self.show_loading()
         self.put_text('开始训练人脸模型，需要一点时间，等稍等...')
         train = Training()
         train.start()
@@ -53,18 +56,26 @@ class FaceTools:
     def recognition(self):
         self.put_title('第三步：人脸检测功能')
         self.put_text('正在打开电脑相机，请稍后>>>')
+        self.show_loading(timeout=3)
         recognition = Recognition()
         self.put_text("开始获取摄像头数据...")
         self.put_text('按下Esc可以退出')
         recognition.start()
         self.put_text('识别完成')
 
-    def count_t(self, num):
-        start_time = datetime.datetime.now()
-        while True:
-            end_time = datetime.datetime.now()
-            if (end_time - start_time).seconds == num:
-                print("pass 5 seconds!")
+    def show_loading(self, timeout=5):
+        print('show_loading------------')
+        with use_scope('loading'):
+            put_loading(color="primary")
+            put_text("加载中...")
+            put_html("""<style>#pywebio-scope-loading {text-align:center}</style>""")
+        timer = threading.Timer(timeout, self.hide_loading)
+        timer.start()
+
+    @staticmethod
+    def hide_loading():
+        print("hide_loading--------------")
+        remove(scope='loading')
 
     @staticmethod
     def put_title(title, num=3, center=False):
@@ -72,6 +83,10 @@ class FaceTools:
             style(put_html('<h{1}>{0}</h{1}>'.format(title, num)), 'text-align:center')
         else:
             put_html('<h{1}>{0}</h{1}>'.format(title, num))
+
+    def put_text_delay(self, text, timeout=1):
+        timer = threading.Timer(timeout, self.put_text)
+        timer.start()
 
     @staticmethod
     def put_text(text):
