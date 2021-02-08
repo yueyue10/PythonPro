@@ -1,6 +1,7 @@
 """
 人脸识别功能测试
 """
+import base64
 import os
 
 
@@ -15,6 +16,8 @@ class Config:
 
     def __init__(self):
         self.face_dict = self.get_face_dict()
+        self.face_paths = self.get_face_paths()
+        self.face_images = self.get_face_images()
 
     def get_face_dict(self):
         img_paths = []
@@ -30,5 +33,24 @@ class Config:
             face_dict[face_id] = face_name
         return face_dict
 
+    def get_face_paths(self):
+        image_paths = []
+        for f in os.listdir(self.face_path):
+            image_paths.append(os.path.join(self.face_path, f))
+        return image_paths
 
-conf = Config
+    def get_face_images(self):
+        face_images = []
+        for f_path in self.face_paths:
+            with open(f_path, 'rb') as f:
+                img = f.read()
+                # img = base64.b64encode(f.read())
+                face_images.append(img)
+        return face_images
+
+
+conf = Config()
+
+if __name__ == '__main__':
+    print(conf.face_paths)
+    print(conf.face_images)
