@@ -11,7 +11,7 @@ from demo.face_recognition import Recognition
 from demo.face_training import Training
 
 
-class FaceTools:
+class FaceApp:
     def __init__(self):
         self.put_title("人脸识别功能", t_size=1, center=True)
 
@@ -96,5 +96,5 @@ class FaceTools:
 
 
 if __name__ == '__main__':
-    face = FaceTools()
-    face.start()
+    app = FaceApp()
+    app.start()
