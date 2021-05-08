@@ -9,13 +9,13 @@ ANSWER_KEY = {0: "A", 1: "B", 2: "C", 3: "D", 4: "E"}
 
 def deal_image():  # 图片处理
     # 加载一个图片到opencv中
-    img = cv.imread('t1.png')
+    img = cv.imread('t2.jpg')
 
     # # 定义想要缩放后的图片大小
-    # info = img.shape  # 获取图片的宽 高 颜色通道信息
-    # dst_width = int(info[1] * 0.2)
-    # dst_height = int(info[0] * 0.2)
-    # img = cv.resize(img, (dst_width, dst_height), 0, 0)
+    info = img.shape  # 获取图片的宽 高 颜色通道信息
+    dst_width = int(info[1] * 0.2)
+    dst_height = int(info[0] * 0.2)
+    img = cv.resize(img, (dst_width, dst_height), 0, 0)
 
     # 1.原图
     cv.imshow("resize", img)
@@ -52,6 +52,7 @@ def filter_rect_cts(cts_sort, img, gray):  # 筛选轮廓为矩形的区域
         peri = 0.01 * cv.arcLength(c, True)
         # 获取多边形的所有定点，如果是四个定点，就代表是矩形
         approx = cv.approxPolyDP(c, peri, True)
+
         # 打印定点个数
         print("顶点个数：", len(approx))
         if len(approx) == 4:  # 矩形
@@ -74,6 +75,7 @@ def filter_answer_cts(thresh2, ox_sheet, tx_sheet):  # 筛选轮廓特征为答�
     print("找到轮廓个数----------------：", len(r_cnt))
     # 使用红色标记所有的轮廓
     cv.drawContours(ox_sheet, r_cnt, -1, (0, 0, 255), 2)
+
     # 把所有找到的轮廓，给标记出来
     question_cts = []
     for cxx in r_cnt:
@@ -87,6 +89,7 @@ def filter_answer_cts(thresh2, ox_sheet, tx_sheet):  # 筛选轮廓特征为答�
             question_cts.append(cxx)
     print("question_cts========", question_cts)
     cv.imshow("ox_1", ox_sheet)
+    return
     com_answer_list(ox_sheet, tx_sheet, question_cts, thresh2)
 
 

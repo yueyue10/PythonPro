@@ -11,19 +11,19 @@ def deal_image():  # 图片处理
     # 加载一个图片到opencv中
     img = cv.imread('t1.png')
     # 1.原图
-    # cv.imshow("orgin", img)
+    cv.imshow("orgin", img)
 
     # 2.转化成灰度图片
     gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
-    # cv.imshow("gray", gray)
+    cv.imshow("gray", gray)
 
     # 3.高斯模糊图
     gaussian_bulr = cv.GaussianBlur(gray, (5, 5), 0)
-    # cv.imshow("gaussian", gaussian_bulr)
+    cv.imshow("gaussian", gaussian_bulr)
 
     # 4.使用边缘检测后的图
     edged = cv.Canny(gaussian_bulr, 75, 200)  # 边缘检测,灰度值小于2参这个值的会被丢弃，大于3参这个值会被当成边缘，在中间的部分，自动检测
-    # cv.imshow("edged", edged)
+    cv.imshow("edged", edged)
 
     # 寻找轮廓
     image, cts, hierarchy = cv.findContours(edged.copy(), cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)
@@ -33,7 +33,7 @@ def deal_image():  # 图片处理
     # 按面积大小对所有的轮廓排序
     cts_sort = sorted(cts, key=cv.contourArea, reverse=True)
     print("寻找轮廓的个数：", len(cts_sort))  # 最外面的轮廓
-    # cv.imshow("draw_contours", img)
+    cv.imshow("draw_contours", img)
     filter_rect_cts(cts_sort, img, gray)
 
 
@@ -51,8 +51,8 @@ def filter_rect_cts(cts_sort, img, gray):  # 筛选轮廓为矩形的区域
             ox_sheet = four_point_transform(img, approx.reshape(4, 2))
             # 透视变换提取灰度图内容部分
             tx_sheet = four_point_transform(gray, approx.reshape(4, 2))
-            # cv.imshow("ox", ox_sheet)
-            # cv.imshow("tx", tx_sheet)
+            cv.imshow("ox", ox_sheet)
+            cv.imshow("tx", tx_sheet)
             # 使用ostu二值化算法对灰度图做一个二值化处理
             ret, thresh2 = cv.threshold(tx_sheet, 0, 255, cv.THRESH_BINARY_INV | cv.THRESH_OTSU)
             cv.imshow("ostu", thresh2)
