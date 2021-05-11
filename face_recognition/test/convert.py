@@ -87,8 +87,32 @@ def transform(gray_trans, img_trans):
     img_trans2 = four_point_transform(img_trans, np.array(four_points))
     cv2.imshow("img_trans2", img_trans2)
     # answer_area(gray_trans2, img_trans2)
-    answer_area1(gray_trans2, img_trans2)
+    # answer_area1(gray_trans2, img_trans2)
+    answer_area2(gray_trans2, img_trans2)
     # answer(gray_trans2, img_trans2)
+
+
+def answer_area2(gray_trans2, img_trans2):
+    edged = cv2.Canny(gray_trans2, 10, 20)  # 边缘检测,灰度值小于2参这个值的会被丢弃，大于3参这个值会被当成边缘，在中间的部分，自动检测
+    cv2.imshow("edged----", edged)
+    image, cts, hierarchy = cv2.findContours(edged.copy(), cv2.RETR_CCOMP, cv2.CHAIN_APPROX_SIMPLE)
+    # cv2.drawContours(img_trans2, cts, -1, (0, 0, 255), 3)
+    # cv2.imshow("draw_contours", img_trans2)
+    cts_sort = sorted(cts, key=cv2.contourArea, reverse=True)
+    print("寻找轮廓的个数：", len(cts_sort))  # 最外面的轮廓
+    question_cts = []
+    print(img_trans2.shape)
+    hei, wid,color = img_trans2.shape
+    for idx, cxx in enumerate(cts_sort):
+        # 通过矩形，标记每一个指定的轮廓
+        x, y, w, h = cv2.boundingRect(cxx)
+        # if w >= 100 and h >= 100:
+        if hei / 5 > h > (hei / 5 - 4 * 30) and wid / 4 > w > (wid / 4 - 3 * 30):
+            question_cts.append(cxx)
+    print("question_cts", len(question_cts))
+
+    cv2.drawContours(img_trans2, question_cts, -1, (0, 0, 255), 3)
+    cv2.imshow("draw_contours", img_trans2)
 
 
 def answer_area1(gray_trans2, img_trans2):
