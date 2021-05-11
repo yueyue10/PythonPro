@@ -86,10 +86,34 @@ def transform(gray_trans, img_trans):
     gray_trans2 = four_point_transform(gray_trans, np.array(four_points))
     img_trans2 = four_point_transform(img_trans, np.array(four_points))
     cv2.imshow("img_trans2", img_trans2)
-    # answer_area(gray_trans2, img_trans2)
+    answer_area(gray_trans2, img_trans2)
     # answer_area1(gray_trans2, img_trans2)
-    answer_area2(gray_trans2, img_trans2)
+    # answer_area2(gray_trans2, img_trans2)
+    # answer_area3(gray_trans2, img_trans2)
     # answer(gray_trans2, img_trans2)
+
+
+def answer_area3(gray_trans2, img_trans2):
+    cv2.namedWindow('tracks')
+    cv2.createTrackbar("key0", "tracks", 5, 300, lambda x: None)
+    cv2.createTrackbar("key1", "tracks", 5, 300, lambda x: None)
+    cv2.createTrackbar("key2", "tracks", 0, 300, lambda x: None)
+    cv2.createTrackbar("key3", "tracks", 75, 300, lambda x: None)
+    cv2.createTrackbar("key4", "tracks", 200, 300, lambda x: None)
+    while True:
+        key0 = cv2.getTrackbarPos("key0", "tracks")
+        key1 = cv2.getTrackbarPos("key1", "tracks")
+        key2 = cv2.getTrackbarPos("key2", "tracks")
+        key3 = cv2.getTrackbarPos("key3", "tracks")
+        key4 = cv2.getTrackbarPos("key4", "tracks")
+        gaussian_bulr = cv2.GaussianBlur(gray_trans2, (key0, key1), key2)
+        cv2.imshow("gaussian", gaussian_bulr)
+        edged = cv2.Canny(gaussian_bulr, key3, key4)  # 边缘检测,灰度值小于2参这个值的会被丢弃，大于3参这个值会被当成边缘，在中间的部分，自动检测
+        cv2.imshow("edged", edged)
+        k = cv2.waitKey(1)
+        if k == 27:
+            break
+
 
 
 def answer_area2(gray_trans2, img_trans2):
@@ -102,16 +126,22 @@ def answer_area2(gray_trans2, img_trans2):
     print("寻找轮廓的个数：", len(cts_sort))  # 最外面的轮廓
     question_cts = []
     print(img_trans2.shape)
-    hei, wid,color = img_trans2.shape
+    hei, wid, color = img_trans2.shape
     for idx, cxx in enumerate(cts_sort):
         # 通过矩形，标记每一个指定的轮廓
+        peri = 0.01 * cv2.arcLength(cxx, True)
+        # 获取多边形的所有定点，如果是四个定点，就代表是矩形
+        approx = cv2.approxPolyDP(cxx, peri, True)
         x, y, w, h = cv2.boundingRect(cxx)
         # if w >= 100 and h >= 100:
-        if hei / 5 > h > (hei / 5 - 4 * 30) and wid / 4 > w > (wid / 4 - 3 * 30):
+        # if hei / 5 > h > (hei / 5 - 4 * 30) and wid / 4 > w > (wid / 4 - 3 * 30):
+        if idx < 100:
+            print("顶点个数：", len(approx))
             question_cts.append(cxx)
+            cv2.rectangle(img_trans2, (x, y), (x + w, y + h), (0, 255, 0), 2)
     print("question_cts", len(question_cts))
 
-    cv2.drawContours(img_trans2, question_cts, -1, (0, 0, 255), 3)
+    # cv2.drawContours(img_trans2, question_cts, -1, (0, 0, 255), 3)
     cv2.imshow("draw_contours", img_trans2)
 
 
@@ -143,27 +173,24 @@ def answer_area(gray_trans2, img_trans2):
     # thresh2 = cv2.adaptiveThreshold(gray_trans2, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY_INV, 3, 0)
     # cv2.imshow("thresh2", thresh2)
     # 二值化
-    binary = cv2.adaptiveThreshold(gray_trans2, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 5, 0)
+    binary = cv2.adaptiveThreshold(gray_trans2, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 5, 1)
     cv2.imshow("binary", binary)  # 展示图片
     rows, cols = binary.shape
     print("rows=====", rows, cols)
-    scale = 20
     # 识别横线
-    kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (cols // scale, 1))
+    kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (5, 1))
     eroded = cv2.erode(binary, kernel, iterations=1)
-    cv2.imshow("Eroded Image", eroded)
+    # cv2.imshow("Eroded Image", eroded)
     dilatedcol = cv2.dilate(eroded, kernel, iterations=1)
     cv2.imshow("dilatedcol", dilatedcol)
     # 识别竖线
-    scale = 20
-    kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (1, rows // scale))
+    kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (1, 20))
     eroded = cv2.erode(binary, kernel, iterations=1)
     dilatedrow = cv2.dilate(eroded, kernel, iterations=1)
     cv2.imshow("dilatedrow", dilatedrow)
     # 标识交点
     bitwiseAnd = cv2.bitwise_and(dilatedcol, dilatedrow)
     cv2.imshow("bitwiseAnd", bitwiseAnd)
-    cv2.waitKey(0)
 
 
 def answer(gray_trans2, img_trans2):
