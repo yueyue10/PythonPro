@@ -7,9 +7,13 @@ from imutils import contours
 from imutils.perspective import four_point_transform
 
 
+def nothing(args):
+    pass
+
+
 def test():
     # 载入并显示图片
-    img = cv2.imread('t3.jpg')
+    img = cv2.imread('t2.jpg')
     img = cv2.resize(img, (500, 700), 0, 0)
     # 1.降噪（模糊处理用来减少瑕疵点）
     result = cv2.blur(img, (5, 5))
@@ -82,7 +86,60 @@ def transform(gray_trans, img_trans):
     gray_trans2 = four_point_transform(gray_trans, np.array(four_points))
     img_trans2 = four_point_transform(img_trans, np.array(four_points))
     cv2.imshow("img_trans2", img_trans2)
-    answer(gray_trans2, img_trans2)
+    # answer_area(gray_trans2, img_trans2)
+    answer_area1(gray_trans2, img_trans2)
+    # answer(gray_trans2, img_trans2)
+
+
+def answer_area1(gray_trans2, img_trans2):
+    cv2.namedWindow('tracks')
+    cv2.createTrackbar("key0", "tracks", 0, 300, lambda x: None)
+    cv2.createTrackbar("key1", "tracks", 240, 300, lambda x: None)
+    cv2.createTrackbar("key2", "tracks", 75, 300, lambda x: None)
+    cv2.createTrackbar("key3", "tracks", 150, 300, lambda x: None)
+    while True:
+        key0 = cv2.getTrackbarPos("key0", "tracks")
+        key1 = cv2.getTrackbarPos("key1", "tracks")
+        key2 = cv2.getTrackbarPos("key2", "tracks")
+        key3 = cv2.getTrackbarPos("key3", "tracks")
+        rows, cols = gray_trans2.shape
+        edges = cv2.Canny(gray_trans2, 0, 10, apertureSize=3)  # 50,150,3
+        # roi_mean_set = cv2.mean(~edges[0:int((rows - 100) / 2), 85:150])  # 通过区域灰度值特征排除文字对直线识别的干扰
+        # roi_mean = roi_mean_set[0]
+        cv2.imshow('edges', edges)
+        cv2.imshow('edges_sample', ~edges[key0:key1, key2:key3])
+        # lines = cv2.HoughLinesP(edges, 1.0, np.pi / 180, 35, 0, minLineLength=10, maxLineGap=20)  # 50,10,20
+        # print("lines", lines)
+        k = cv2.waitKey(1)
+        if k == 27:
+            break
+
+
+def answer_area(gray_trans2, img_trans2):
+    # thresh2 = cv2.adaptiveThreshold(gray_trans2, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY_INV, 3, 0)
+    # cv2.imshow("thresh2", thresh2)
+    # 二值化
+    binary = cv2.adaptiveThreshold(gray_trans2, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 5, 0)
+    cv2.imshow("binary", binary)  # 展示图片
+    rows, cols = binary.shape
+    print("rows=====", rows, cols)
+    scale = 20
+    # 识别横线
+    kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (cols // scale, 1))
+    eroded = cv2.erode(binary, kernel, iterations=1)
+    cv2.imshow("Eroded Image", eroded)
+    dilatedcol = cv2.dilate(eroded, kernel, iterations=1)
+    cv2.imshow("dilatedcol", dilatedcol)
+    # 识别竖线
+    scale = 20
+    kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (1, rows // scale))
+    eroded = cv2.erode(binary, kernel, iterations=1)
+    dilatedrow = cv2.dilate(eroded, kernel, iterations=1)
+    cv2.imshow("dilatedrow", dilatedrow)
+    # 标识交点
+    bitwiseAnd = cv2.bitwise_and(dilatedcol, dilatedrow)
+    cv2.imshow("bitwiseAnd", bitwiseAnd)
+    cv2.waitKey(0)
 
 
 def answer(gray_trans2, img_trans2):
