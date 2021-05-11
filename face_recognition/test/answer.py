@@ -20,7 +20,7 @@ class Answer(object):
         ans_list = []  # 选择的题目和答案
         gray_trans, img_trans = self.read_img(self.path)
         gray_trans2, img_trans2 = self.transform_again(gray_trans, img_trans)
-        sel_cts = self.get_sel_point(gray_trans2)
+        sel_cts = self.get_sel_point(gray_trans2,img_trans2)
         card_list = self.get_card_list()  # 答题卡区域
         for que_item in sel_cts:
             ans_item = self.compute_score(que_item, img_trans2, card_list)
@@ -171,5 +171,7 @@ class Answer(object):
 
 
 if __name__ == '__main__':
-    answer = Answer("../answer/t2.jpg")
+    answer = Answer("../answer/t3.jpg")
     answer.start()
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
