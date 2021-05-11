@@ -86,11 +86,11 @@ def transform(gray_trans, img_trans):
     gray_trans2 = four_point_transform(gray_trans, np.array(four_points))
     img_trans2 = four_point_transform(img_trans, np.array(four_points))
     cv2.imshow("img_trans2", img_trans2)
-    answer_area(gray_trans2, img_trans2)
+    # answer_area(gray_trans2, img_trans2)
     # answer_area1(gray_trans2, img_trans2)
     # answer_area2(gray_trans2, img_trans2)
     # answer_area3(gray_trans2, img_trans2)
-    # answer(gray_trans2, img_trans2)
+    answer(gray_trans2, img_trans2)
 
 
 def answer_area3(gray_trans2, img_trans2):
@@ -113,7 +113,6 @@ def answer_area3(gray_trans2, img_trans2):
         k = cv2.waitKey(1)
         if k == 27:
             break
-
 
 
 def answer_area2(gray_trans2, img_trans2):
@@ -207,11 +206,64 @@ def answer(gray_trans2, img_trans2):
         x, y, w, h = cv2.boundingRect(cxx)
         ar = w / float(h)
         if w >= 5 and w < 10:
-            cv2.rectangle(img_trans2, (x, y), (x + w, y + h), (0, 255, 0), 2)
+            # cv2.rectangle(img_trans2, (x, y), (x + w, y + h), (0, 255, 0), 2)
             # 把每个选项，保存下来
-            question_cts.append(cxx)
+            question_cts.append([x, y, w, h])
     print("question_cts========", len(question_cts))
+    for que_item in question_cts:
+        compute_score(que_item, img_trans2)
+
+
+def compute_score(que_item, img_trans2):
+    hor_space = 15  # 横向间距15
+    hor_que_space = 15  # 答案单个横向间距
+    ver_space = 15  # 纵向间距15
+    ver_que_space = 40  # 答案块纵向间距
+    # print("que=========", que_item)
+    hei, wid, rec = img_trans2.shape
+    # print("img_trans2.shape", wid, hei)
+    x, y, w, h = que_item
+    cv2.rectangle(img_trans2, (x, y), (x + w, y + h), (0, 255, 0), 2)
     cv2.imshow("ox_1", img_trans2)
+    cv2.setMouseCallback('ox_1', mouse_click)
+    cx = x + w / 2
+    cy = y + h / 2
+    key_list = []
+    for j in range(5):
+        for i in range(20):
+            hor_space_num = i // 5 + 1  # 所在横向块数
+            hor_piece_num = (i + 1) % 5  # 所在横向份数
+            start_x = (hor_space_num - 1) * hor_space + hor_que_space * i
+            # if i == 5 and j == 0: print("hor_", hor_space_num, hor_piece_num, start_x)  # 横向的第几块，第几份
+            start_y = j * ver_space + ver_que_space * j
+            # if i == 0 and j == 4: print("纵向的第{}块，y坐标{}".format(j + 1, start_y))  # 纵向的第几块，第几份
+            key_list.append({"key": j * 20 + (i + 1), "value": [start_x, start_y]})
+    # print("key_list", key_list)
+    for coo in key_list:
+        x, y = coo['value']
+        # print("coo", x, y)
+        if x + hor_que_space > cx > x and y + ver_que_space > cy > y:
+            choose_ans = get_answer(cy - y, ver_que_space)
+            print("题目{},答案{}".format(coo['key'], choose_ans))
+
+
+def get_answer(sel, all):
+    percent = sel / all
+    if percent < 1 / 5:
+        return "num"
+    elif percent < 2 / 5:
+        return "A"
+    elif percent < 3 / 5:
+        return "B"
+    elif percent < 4 / 5:
+        return "C"
+    elif percent < 1:
+        return "D"
+
+
+def mouse_click(event, x, y, flags, param):
+    if event == cv2.EVENT_LBUTTONDOWN:
+        print("mouse_click======EVENT_LBUTTONDOWN", event, x, y)
 
 
 if __name__ == '__main__':
