@@ -1,4 +1,7 @@
 from docx import Document
+import pandas  as pd
+from xlwt import *
+import re
 
 
 def get_text(text):
@@ -32,6 +35,7 @@ class Word(object):
             if self.is_que_title(para.text):
                 que_num = que_num + 1
                 if que_item:
+                    self.config_que(que_item)
                     que_list.append(que_item)
                 que_item = {}
                 que_item['num'] = que_num
@@ -40,14 +44,43 @@ class Word(object):
             else:
                 que_item['text'] = que_item['text'] + get_text(para.text)
                 que_item['ans'] = self.get_que_ans(para, que_item)
-                self.config_que(que_item)
             # print(que_item)
-        for que in que_list:
-            print(que)
-            # if que and "ans" in que and len(que['ans']) <= 0:
-            #     print(que)
-            # if que and "options" in que and len(que['options']) <= 0:
-            #     print(que)
+        # for que in que_list:
+        # print(que)
+        # if que and "ans" in que and len(que['ans']) <= 0:
+        #     print(que)
+        # if que and "options" in que and len(que['options']) <= 0:
+        #     print(que)
+        # if que and "title" in que and len(que['title']) <= 0:
+        #     print(que)
+        self.save_to_excel(que_list)
+
+    def save_to_excel(self, que_list):
+        que_obj = ('num', 'title', 'ans', 'options')
+        file = Workbook(encoding='utf-8')
+        table = file.add_sheet('data')
+        table.col(0).width = 1500
+        table.col(1).width = 15000
+        table.col(2).width = 9000
+        table.col(3).width = 15000
+        table.col(4).width = 15000
+        for i, que in enumerate(que_list):
+            for j, key in enumerate(que_obj):
+                if i == 0:
+                    value = key
+                elif key in que:
+                    value = que[key]
+                else:
+                    value = ''
+                alignment = Alignment()
+                if i == 0 or j == 0:
+                    alignment.horz = Alignment.HORZ_CENTER
+                else:
+                    alignment.horz = Alignment.HORZ_LEFT
+                style = XFStyle()
+                style.alignment = alignment
+                table.write(i, j, value, style)
+        file.save('data.xlsx')
 
     def is_que_title(self, text):
         texts = text.split("、")
@@ -59,35 +92,61 @@ class Word(object):
             return False
 
     def get_que_ans(self, para, que_item):
+        flag = -1
         # 1.判断被下划线标识的字段
         runs = para.runs
         if "ans" in que_item:
             ans = que_item['ans']
         else:
-            ans = []
+            ans = ""
         for run in runs:
             if run.font.underline:
-                ans.append(get_text(run.text))
+                ans = ans + get_text(run.text)
+                flag = 1
         # 2.判断被括号包围的字段
-        if "（" in para.text and "）" in para.text:
+        if "（" in para.text and "）" in para.text and flag == -1:
             an = para.text.split("（")[1].split("）")[0]
             if "A" in an or "B" in an or "C" in an or "D" in an:
-                ans.append(an)
-        if "(" in para.text and ")" in para.text:
+                ans = ans + an
+                flag = 2
+        if "(" in para.text and ")" in para.text and flag == -1:
             an = para.text.split("(")[1].split(")")[0]
             if "A" in an or "B" in an or "C" in an or "D" in an:
-                ans.append(an)
+                ans = ans + an
+                flag = 3
         return ans
 
     def config_que(self, que_item):
         if "。" in que_item['text']:
-            content = que_item['text'].split("。")
-            # print("content", content)
             que_item['title'] = que_item['text'].split("。")[0]
             que_item['options'] = que_item['text'].split("。")[1]
-        if "）：" in que_item['text']:
+        elif "）：" in que_item['text']:
             que_item['title'] = que_item['text'].split("）：")[0] + "）："
             que_item['options'] = que_item['text'].split("）：")[1]
+        elif "A." in que_item['text']:
+            que_item['title'] = que_item['text'].split("A.")[0]
+            que_item['options'] = que_item['text'].split("A.")[1] + "A."
+        elif "A．" in que_item['text']:
+            que_item['title'] = que_item['text'].split("A．")[0]
+            que_item['options'] = que_item['text'].split("A．")[1] + "A."
+        elif "A、" in que_item['text']:
+            que_item['title'] = que_item['text'].split("A、")[0]
+            que_item['options'] = que_item['text'].split("A、")[1] + "A."
+        if 'title' in que_item:
+            que_item['title'] = re.sub(r'\（(.+?)\）', "()", que_item['title'])
+            que_item['title'] = re.sub(r'\((.+?)\)', "()", que_item['title'])
+        if 'ans' in que_item:
+            print(que_item['ans'])
+            ans = []
+            if "A" in que_item['ans']:
+                ans.append("A")
+            if "B" in que_item['ans']:
+                ans.append("B")
+            if "C" in que_item['ans']:
+                ans.append("C")
+            if "D" in que_item['ans']:
+                ans.append("D")
+            que_item['ans'] = ans
 
 
 if __name__ == '__main__':
